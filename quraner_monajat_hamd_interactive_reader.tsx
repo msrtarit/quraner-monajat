@@ -2416,17 +2416,17 @@ export default function App() {
     >
       {/* Google Fonts for Authentic Arabic, Bengali, and Serif English Typography */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Hind+Siliguri:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Serif+Bengali:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Hind+Siliguri:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
 
         .font-arabic {
           font-family: 'Amiri', 'Traditional Arabic', serif;
           line-height: 2.15;
         }
         .font-bn-serif {
-          font-family: 'Noto Serif Bengali', 'Hind Siliguri', serif;
+          font-family: 'Hind Siliguri', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         .font-bn-sans {
-          font-family: 'Hind Siliguri', sans-serif;
+          font-family: 'Hind Siliguri', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         .font-en-serif {
           font-family: 'Lora', Georgia, serif;
@@ -3260,21 +3260,25 @@ export default function App() {
 
                           {/* 2. Bengali Translation */}
                           {visibleLayers.bengali && (
-                            <div
-                              style={{ fontSize: `${bengaliSize}px` }}
-                              className="font-bn-serif leading-relaxed text-[#0F172A] dark:text-[#F1F5F9] font-medium"
-                            >
-                              <span className="text-xs font-bn-sans font-bold uppercase tracking-wider text-[#0F766E] dark:text-[#2DD4BF] block mb-1">
+                            <div className="space-y-1">
+                              <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 block">
                                 বাংলা অনুবাদ:
                               </span>
-                              “{entry.bnTranslation}”
+                              <p
+                                style={{ fontSize: `${bengaliSize}px` }}
+                                className="font-bn-serif text-slate-900 dark:text-slate-100 font-medium leading-loose"
+                              >
+                                “{entry.bnTranslation}”
+                              </p>
                             </div>
                           )}
 
                           {/* 3. English Translation */}
                           {visibleLayers.english && (
-                            <div className="font-en-serif text-sm sm:text-base leading-relaxed text-[#1E293B] dark:text-[#E2E8F0] font-normal pl-3.5 border-l-2 border-[#14B8A6]">
-                              “{entry.enTranslation}”
+                            <div className="space-y-1 pl-3.5 border-l-2 border-[#14B8A6]">
+                              <p className="font-en-serif text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+                                “{entry.enTranslation}”
+                              </p>
                             </div>
                           )}
 
