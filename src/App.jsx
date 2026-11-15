@@ -2416,14 +2416,14 @@ export default function App() {
     >
       {/* Google Fonts for Authentic Arabic, Bengali, and Serif English Typography */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Hind+Siliguri:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Hind+Siliguri:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap');
 
         .font-arabic {
           font-family: 'Amiri', 'Traditional Arabic', serif;
           line-height: 2.15;
         }
         .font-bn-serif {
-          font-family: 'Hind Siliguri', -apple-system, BlinkMacSystemFont, sans-serif;
+          font-family: 'Hind Siliguri', 'Noto Serif Bengali', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         .font-bn-sans {
           font-family: 'Hind Siliguri', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -3132,7 +3132,7 @@ export default function App() {
                                 <span className="font-bn-serif font-bold text-base sm:text-lg text-[#0F5B63] dark:text-[#5EEAD4]">
                                   {lang === 'bn' ? entry.labelBn : entry.labelEn}
                                 </span>
-                                <span className="text-xs px-2.5 py-0.5 rounded-full font-bn-sans font-medium bg-[#0F5B63]/10 text-[#0F5B63] dark:bg-[#14B8A6]/20 dark:text-[#2DD4BF]">
+                                <span className="text-xs px-2.5 py-0.5 rounded-full font-bn-sans font-semibold bg-[#0F5B63]/15 text-[#0A3D36] dark:bg-[#14B8A6]/20 dark:text-[#2DD4BF] border border-[#0F5B63]/25 dark:border-[#14B8A6]/30">
                                   {lang === 'bn' ? entry.surahBn : entry.surahEn}
                                 </span>
                                 {entry.isSajdah && (
