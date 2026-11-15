@@ -3261,20 +3261,39 @@ export default function App() {
                           {/* 2. Bengali Translation */}
                           {visibleLayers.bengali && (
                             <div
-                              style={{ fontSize: `${bengaliSize}px` }}
-                              className="font-bn-sans leading-relaxed text-[#111827] dark:text-[#EAE6DC]"
+                              className={`rounded-xl p-4 border transition-colors ${
+                                darkMode
+                                  ? 'bg-[#0B1718]/80 border-[#1E3C40]'
+                                  : 'bg-[#F8FAFC] border-[#E2E8F0]'
+                              }`}
                             >
-                              <span className="text-xs font-bn-sans font-bold uppercase tracking-wider text-[#0F766E] dark:text-[#2DD4BF] block mb-1">
+                              <span className="text-xs font-bn-sans font-bold uppercase tracking-wider text-[#0F766E] dark:text-[#2DD4BF] block mb-1.5">
                                 বাংলা অনুবাদ:
                               </span>
-                              “{entry.bnTranslation}”
+                              <p
+                                style={{ fontSize: `${bengaliSize}px` }}
+                                className="font-bn-serif leading-relaxed text-[#111827] dark:text-[#EAE6DC]"
+                              >
+                                “{entry.bnTranslation}”
+                              </p>
                             </div>
                           )}
 
                           {/* 3. English Translation */}
                           {visibleLayers.english && (
-                            <div className="font-en-serif text-sm sm:text-base leading-relaxed opacity-85 pl-3.5 border-l-2 border-[#14B8A6]">
-                              “{entry.enTranslation}”
+                            <div
+                              className={`rounded-xl p-4 border transition-colors ${
+                                darkMode
+                                  ? 'bg-[#0B1718]/50 border-[#1E3C40]'
+                                  : 'bg-[#F8FAFC]/60 border-[#E2E8F0]'
+                              }`}
+                            >
+                              <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#0F766E] dark:text-[#2DD4BF] block mb-1.5">
+                                English Meaning:
+                              </span>
+                              <p className="font-en-serif text-sm sm:text-base leading-relaxed opacity-90 text-[#111827] dark:text-[#EAE6DC]">
+                                “{entry.enTranslation}”
+                              </p>
                             </div>
                           )}
 
