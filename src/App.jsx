@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import {
   Languages,
   Play, Pause, SkipBack, SkipForward, Repeat, Volume2, VolumeX,
@@ -2511,21 +2511,25 @@ export default function App() {
             </button>
 
             {/* Reciter Selector */}
-            <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[#C59B27]/40 bg-[#0F5B63]/5 dark:bg-[#122528]">
+            <div className={`hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[#C59B27]/40 transition ${
+              darkMode ? 'bg-[#122528] text-white' : 'bg-white text-[#152B2E] shadow-xs'
+            }`}>
               <Volume2 size={16} className="text-[#C59B27] shrink-0" />
               <select
                 value={reciter}
                 onChange={(e) => setReciter(e.target.value)}
-                className="bg-transparent text-xs font-medium focus:outline-none cursor-pointer pr-1 max-w-[190px] truncate"
+                className={`bg-transparent text-xs font-semibold focus:outline-none cursor-pointer pr-1 max-w-[190px] truncate ${
+                  darkMode ? 'text-[#EAE6DC]' : 'text-[#152B2E]'
+                }`}
                 title="Select Quran Reciter"
               >
                 {RECITERS.map((r) => (
                   <option
                     key={r.id}
                     value={r.id}
-                    className={darkMode ? 'bg-[#0F2124] text-white' : 'bg-white text-black'}
+                    className={darkMode ? 'bg-[#0F2124] text-white' : 'bg-white text-[#152B2E]'}
                   >
-                    {r.name}
+                    {lang === 'bn' ? r.bnName : r.name}
                   </option>
                 ))}
               </select>
