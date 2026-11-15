@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
+﻿import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import {
   Play, Pause, SkipBack, SkipForward, Repeat, Volume2, VolumeX,
   BookOpen, Sparkles, Heart, Search, Moon, Sun, Settings, Check,
@@ -1568,7 +1568,6 @@ export default function App() {
   const [selectedGoal, setSelectedGoal] = useState('ALL');
   const [onlyFavorites, setOnlyFavorites] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const [showDeployModal, setShowDeployModal] = useState(false);
   const [copiedKey, setCopiedKey] = useState(null);
 
   // Display preferences
@@ -1886,8 +1885,8 @@ export default function App() {
     <div
       className={`min-h-screen transition-colors duration-300 ${
         darkMode
-          ? 'bg-[#0D1613] text-[#EAE6DC]'
-          : 'bg-[#FAF8F3] text-[#1D2B24]'
+          ? 'bg-[#0B1718] text-[#EAE6DC]'
+          : 'bg-[#FAF8F3] text-[#152B2E]'
       }`}
     >
       {/* Google Fonts for Authentic Arabic, Bengali, and Serif English Typography */}
@@ -1942,7 +1941,7 @@ export default function App() {
       <header
         className={`sticky top-0 z-40 border-b backdrop-blur-md transition-colors ${
           darkMode
-            ? 'bg-[#0D1613]/90 border-[#243A31]'
+            ? 'bg-[#0B1718]/90 border-[#1E3C40]'
             : 'bg-[#FAF8F3]/95 border-[#E5DEC9]'
         }`}
       >
@@ -1958,11 +1957,11 @@ export default function App() {
             </button>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0F4C3A] to-[#1A6B52] border border-[#C59B27] flex items-center justify-center shadow-sm text-[#F5E6B8] font-arabic text-xl font-bold">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0F5B63] to-[#15757F] border border-[#C59B27] flex items-center justify-center shadow-sm text-[#F5E6B8] font-arabic text-xl font-bold">
                 ۞
               </div>
               <div>
-                <h1 className="font-bn-serif font-bold text-lg sm:text-xl leading-tight tracking-tight text-[#0F4C3A] dark:text-[#E5C158]">
+                <h1 className="font-bn-serif font-bold text-lg sm:text-xl leading-tight tracking-tight text-[#0F5B63] dark:text-[#E5C158]">
                   কোরআনের মোনাজাত এবং হাম্দ
                 </h1>
                 <p className="text-xs font-bn-sans opacity-75 hidden sm:block">
@@ -1972,10 +1971,10 @@ export default function App() {
             </div>
           </div>
 
-          {/* Right Controls: Reciter Dropdown, Typography Settings, Vercel Guide, Dark Mode */}
+          {/* Right Controls: Reciter Dropdown, Typography Settings, Dark Mode */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Reciter Selector */}
-            <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[#C59B27]/40 bg-[#0F4C3A]/5 dark:bg-[#162620]">
+            <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[#C59B27]/40 bg-[#0F5B63]/5 dark:bg-[#122528]">
               <Volume2 size={16} className="text-[#C59B27] shrink-0" />
               <select
                 value={reciter}
@@ -1987,7 +1986,7 @@ export default function App() {
                   <option
                     key={r.id}
                     value={r.id}
-                    className={darkMode ? 'bg-[#13221C] text-white' : 'bg-white text-black'}
+                    className={darkMode ? 'bg-[#0F2124] text-white' : 'bg-white text-black'}
                   >
                     {r.name}
                   </option>
@@ -2000,21 +1999,12 @@ export default function App() {
               onClick={() => setShowSettings(!showSettings)}
               className={`p-2 rounded-xl border transition ${
                 showSettings
-                  ? 'bg-[#0F4C3A] text-white border-[#0F4C3A]'
+                  ? 'bg-[#0F5B63] text-white border-[#0F5B63]'
                   : 'border-[#C59B27]/40 hover:bg-[#C59B27]/10'
               }`}
               title="Reading & Display Preferences"
             >
               <Settings size={18} />
-            </button>
-
-            {/* Vercel Host Button */}
-            <button
-              onClick={() => setShowDeployModal(true)}
-              className="hidden sm:flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-[#0F4C3A] text-[#FAF8F3] hover:bg-[#15634C] border border-[#C59B27]/60 shadow-sm transition"
-            >
-              <ExternalLink size={14} className="text-[#E5C158]" />
-              <span>Host on Vercel</span>
             </button>
 
             {/* Dark / Night Reading Mode */}
@@ -2023,7 +2013,7 @@ export default function App() {
               className="p-2 rounded-xl border border-[#C59B27]/40 hover:bg-[#C59B27]/10 transition"
               title={darkMode ? 'Switch to Daylight Parchment Mode' : 'Switch to Night Tahajjud Mode'}
             >
-              {darkMode ? <Sun size={18} className="text-[#E5C158]" /> : <Moon size={18} className="text-[#0F4C3A]" />}
+              {darkMode ? <Sun size={18} className="text-[#E5C158]" /> : <Moon size={18} className="text-[#0F5B63]" />}
             </button>
           </div>
         </div>
@@ -2032,7 +2022,7 @@ export default function App() {
         {showSettings && (
           <div
             className={`border-t px-4 py-4 transition-all ${
-              darkMode ? 'bg-[#13221C] border-[#243A31]' : 'bg-[#F3EFE4] border-[#E5DEC9]'
+              darkMode ? 'bg-[#0F2124] border-[#1E3C40]' : 'bg-[#F3EFE4] border-[#E5DEC9]'
             }`}
           >
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
@@ -2055,7 +2045,7 @@ export default function App() {
                       }
                       className={`px-3 py-1.5 rounded-lg text-xs font-bn-sans font-medium border transition flex items-center gap-1.5 ${
                         visibleLayers[layer.key]
-                          ? 'bg-[#0F4C3A] text-white border-[#0F4C3A]'
+                          ? 'bg-[#0F5B63] text-white border-[#0F5B63]'
                           : 'border-[#C59B27]/40 opacity-65'
                       }`}
                     >
@@ -2079,7 +2069,7 @@ export default function App() {
                     max="42"
                     value={arabicSize}
                     onChange={(e) => setArabicSize(Number(e.target.value))}
-                    className="w-full accent-[#0F4C3A]"
+                    className="w-full accent-[#0F5B63]"
                   />
                 </div>
                 <div className="flex-1">
@@ -2093,7 +2083,7 @@ export default function App() {
                     max="24"
                     value={bengaliSize}
                     onChange={(e) => setBengaliSize(Number(e.target.value))}
-                    className="w-full accent-[#0F4C3A]"
+                    className="w-full accent-[#0F5B63]"
                   />
                 </div>
               </div>
@@ -2108,7 +2098,7 @@ export default function App() {
                     value={reciter}
                     onChange={(e) => setReciter(e.target.value)}
                     className={`flex-1 px-2.5 py-1.5 rounded-lg text-xs border border-[#C59B27]/40 ${
-                      darkMode ? 'bg-[#0D1613] text-white' : 'bg-white text-black'
+                      darkMode ? 'bg-[#0B1718] text-white' : 'bg-white text-black'
                     }`}
                   >
                     {RECITERS.map((r) => (
@@ -2121,7 +2111,7 @@ export default function App() {
                     value={playbackRate}
                     onChange={(e) => setPlaybackRate(Number(e.target.value))}
                     className={`px-2.5 py-1.5 rounded-lg text-xs border border-[#C59B27]/40 ${
-                      darkMode ? 'bg-[#0D1613] text-white' : 'bg-white text-black'
+                      darkMode ? 'bg-[#0B1718] text-white' : 'bg-white text-black'
                     }`}
                   >
                     <option value={0.75}>0.75x</option>
@@ -2148,7 +2138,7 @@ export default function App() {
           <div
             className={`sticky top-22 rounded-2xl border p-4 shadow-sm ${
               darkMode
-                ? 'bg-[#13221C] border-[#243A31]'
+                ? 'bg-[#0F2124] border-[#1E3C40]'
                 : 'bg-white border-[#E5DEC9]'
             }`}
           >
@@ -2173,17 +2163,17 @@ export default function App() {
                     }}
                     className={`w-full text-left p-3 rounded-xl border transition-all flex items-start gap-3 ${
                       isActive
-                        ? 'bg-[#0F4C3A] text-[#FAF8F3] border-[#C59B27] shadow-md'
+                        ? 'bg-[#0F5B63] text-[#FAF8F3] border-[#C59B27] shadow-md'
                         : darkMode
-                        ? 'border-transparent hover:bg-[#1B2F27]'
+                        ? 'border-transparent hover:bg-[#163135]'
                         : 'border-transparent hover:bg-[#F5F1E6]'
                     }`}
                   >
                     <span
                       className={`w-7 h-7 rounded-lg flex items-center justify-center font-bn-serif font-bold text-sm shrink-0 mt-0.5 ${
                         isActive
-                          ? 'bg-[#C59B27] text-[#0D1613]'
-                          : 'bg-[#0F4C3A]/10 text-[#0F4C3A] dark:bg-[#C59B27]/20 dark:text-[#E5C158]'
+                          ? 'bg-[#C59B27] text-[#0B1718]'
+                          : 'bg-[#0F5B63]/10 text-[#0F5B63] dark:bg-[#C59B27]/20 dark:text-[#E5C158]'
                       }`}
                     >
                       {chap.number}
@@ -2218,13 +2208,13 @@ export default function App() {
             <div className="mt-5 pt-4 border-t border-[#C59B27]/30 space-y-2.5">
               <div className="flex items-center justify-between text-xs font-bn-sans">
                 <span className="opacity-75">সংরক্ষিত দোয়া (Bookmarks):</span>
-                <span className="font-bold text-[#0F4C3A] dark:text-[#E5C158]">
+                <span className="font-bold text-[#0F5B63] dark:text-[#E5C158]">
                   {toBnDigits(favorites.length)} টি
                 </span>
               </div>
               <div className="flex items-center justify-between text-xs font-bn-sans">
                 <span className="opacity-75">মোট তিলাওয়াত (Recitations):</span>
-                <span className="font-bold text-[#0F4C3A] dark:text-[#E5C158]">
+                <span className="font-bold text-[#0F5B63] dark:text-[#E5C158]">
                   {toBnDigits(
                     Object.values(tasbihCounts).reduce((acc, v) => acc + v, 0)
                   )}{' '}
@@ -2241,7 +2231,7 @@ export default function App() {
           <div
             className={`rounded-2xl border p-5 sm:p-7 mb-6 islamic-pattern relative overflow-hidden ${
               darkMode
-                ? 'bg-gradient-to-br from-[#13241E] to-[#0F1B17] border-[#2A4439]'
+                ? 'bg-gradient-to-br from-[#0E2326] to-[#0D1B1D] border-[#23474C]'
                 : 'bg-gradient-to-br from-[#FFFFFF] to-[#F4EFE2] border-[#DFD5BC]'
             }`}
           >
@@ -2251,7 +2241,7 @@ export default function App() {
                   <Sparkles size={13} />
                   <span>পর্ব {currentChapterObj?.number} • {currentChapterObj?.countLabel}</span>
                 </div>
-                <h2 className="font-bn-serif font-bold text-2xl sm:text-3xl text-[#0F4C3A] dark:text-[#F2D16B]">
+                <h2 className="font-bn-serif font-bold text-2xl sm:text-3xl text-[#0F5B63] dark:text-[#F2D16B]">
                   {currentChapterObj?.titleBn}
                 </h2>
                 <p className="font-en-serif italic text-sm opacity-80 mt-0.5">
@@ -2266,7 +2256,7 @@ export default function App() {
                 <div className="flex flex-wrap items-center gap-2.5 shrink-0">
                   <button
                     onClick={playEntireChapter}
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0F4C3A] hover:bg-[#15634C] text-white font-bn-sans font-semibold text-sm shadow-md border border-[#C59B27]/50 transition cursor-pointer"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0F5B63] hover:bg-[#13707B] text-white font-bn-sans font-semibold text-sm shadow-md border border-[#C59B27]/50 transition cursor-pointer"
                   >
                     <ListMusic size={18} className="text-[#E5C158]" />
                     <span>সম্পূর্ণ পর্ব শুনুন (Play All)</span>
@@ -2285,17 +2275,17 @@ export default function App() {
               <section
                 className={`rounded-2xl border p-6 shadow-sm ${
                   darkMode
-                    ? 'bg-[#13221C] border-[#243A31]'
+                    ? 'bg-[#0F2124] border-[#1E3C40]'
                     : 'bg-white border-[#E5DEC9]'
                 }`}
               >
-                <div className="flex items-center gap-2.5 text-[#0F4C3A] dark:text-[#E5C158] mb-3">
+                <div className="flex items-center gap-2.5 text-[#0F5B63] dark:text-[#E5C158] mb-3">
                   <BookOpen size={20} />
                   <h3 className="font-bn-serif font-bold text-xl">
                     ভূমিকা (Author’s Preface)
                   </h3>
                 </div>
-                <p className="font-arabic text-xl text-center py-3 text-[#0F4C3A] dark:text-[#E5C158]">
+                <p className="font-arabic text-xl text-center py-3 text-[#0F5B63] dark:text-[#E5C158]">
                   بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
                 </p>
                 <div className="space-y-3 font-bn-sans text-base leading-relaxed opacity-90">
@@ -2321,11 +2311,11 @@ export default function App() {
               <section
                 className={`rounded-2xl border p-6 shadow-sm ${
                   darkMode
-                    ? 'bg-[#13221C] border-[#243A31]'
+                    ? 'bg-[#0F2124] border-[#1E3C40]'
                     : 'bg-white border-[#E5DEC9]'
                 }`}
               >
-                <h3 className="font-bn-serif font-bold text-lg text-[#0F4C3A] dark:text-[#E5C158] mb-4">
+                <h3 className="font-bn-serif font-bold text-lg text-[#0F5B63] dark:text-[#E5C158] mb-4">
                   দোয়া কবুলের ধারাবাহিক আদব (Recommended Sequence)
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -2351,7 +2341,7 @@ export default function App() {
                       key={i}
                       className={`p-4 rounded-xl border ${
                         darkMode
-                          ? 'bg-[#0D1613] border-[#243A31]'
+                          ? 'bg-[#0B1718] border-[#1E3C40]'
                           : 'bg-[#FAF8F3] border-[#E5DEC9]'
                       }`}
                     >
@@ -2370,11 +2360,11 @@ export default function App() {
               <section
                 className={`rounded-2xl border p-6 shadow-sm ${
                   darkMode
-                    ? 'bg-[#13221C] border-[#243A31]'
+                    ? 'bg-[#0F2124] border-[#1E3C40]'
                     : 'bg-white border-[#E5DEC9]'
                 }`}
               >
-                <h3 className="font-bn-serif font-bold text-lg text-[#0F4C3A] dark:text-[#E5C158] mb-2">
+                <h3 className="font-bn-serif font-bold text-lg text-[#0F5B63] dark:text-[#E5C158] mb-2">
                   উচ্চারণ নির্দেশিকা (Transliteration Guide)
                 </h3>
                 <p className="font-bn-sans text-sm opacity-80 mb-4">
@@ -2383,7 +2373,7 @@ export default function App() {
                 <div className="divide-y divide-[#C59B27]/20">
                   {PRONUNCIATION_RULES.map((rule, idx) => (
                     <div key={idx} className="py-3 flex flex-col sm:flex-row sm:items-center gap-2">
-                      <span className="inline-block w-36 shrink-0 font-bn-serif font-bold text-base text-[#0F4C3A] dark:text-[#E5C158]">
+                      <span className="inline-block w-36 shrink-0 font-bn-serif font-bold text-base text-[#0F5B63] dark:text-[#E5C158]">
                         {rule.symbol}
                       </span>
                       <span className="font-bn-sans text-sm opacity-90">{rule.desc}</span>
@@ -2401,7 +2391,7 @@ export default function App() {
               <div
                 className={`rounded-2xl border p-4 mb-6 space-y-3 ${
                   darkMode
-                    ? 'bg-[#13221C] border-[#243A31]'
+                    ? 'bg-[#0F2124] border-[#1E3C40]'
                     : 'bg-white border-[#E5DEC9]'
                 }`}
               >
@@ -2419,8 +2409,8 @@ export default function App() {
                       placeholder="সূরার নাম, অর্থ বা ফজিলত খুঁজুন (যেমন: বাকারাহ, ক্ষমা, ধৈর্য, সন্তান, শান্তি)..."
                       className={`w-full pl-10 pr-4 py-2 rounded-xl text-sm font-bn-sans border focus:outline-none focus:border-[#C59B27] ${
                         darkMode
-                          ? 'bg-[#0D1613] border-[#243A31] text-white'
-                          : 'bg-[#FAF8F3] border-[#E5DEC9] text-[#1D2B24]'
+                          ? 'bg-[#0B1718] border-[#1E3C40] text-white'
+                          : 'bg-[#FAF8F3] border-[#E5DEC9] text-[#152B2E]'
                       }`}
                     />
                   </div>
@@ -2430,7 +2420,7 @@ export default function App() {
                     onClick={() => setOnlyFavorites(!onlyFavorites)}
                     className={`px-4 py-2 rounded-xl text-xs font-bn-sans font-semibold border flex items-center justify-center gap-2 transition shrink-0 ${
                       onlyFavorites
-                        ? 'bg-[#C59B27] text-[#0D1613] border-[#C59B27]'
+                        ? 'bg-[#C59B27] text-[#0B1718] border-[#C59B27]'
                         : 'border-[#C59B27]/40 hover:bg-[#C59B27]/10'
                     }`}
                   >
@@ -2447,7 +2437,7 @@ export default function App() {
                       onClick={() => setSelectedGoal(goal.id)}
                       className={`px-3 py-1 rounded-full text-xs font-bn-sans whitespace-nowrap border transition ${
                         selectedGoal === goal.id
-                          ? 'bg-[#0F4C3A] text-white border-[#0F4C3A]'
+                          ? 'bg-[#0F5B63] text-white border-[#0F5B63]'
                           : 'border-[#C59B27]/30 opacity-80 hover:opacity-100'
                       }`}
                     >
@@ -2462,7 +2452,7 @@ export default function App() {
                 <div
                   className={`rounded-2xl border p-12 text-center ${
                     darkMode
-                      ? 'bg-[#13221C] border-[#243A31]'
+                      ? 'bg-[#0F2124] border-[#1E3C40]'
                       : 'bg-white border-[#E5DEC9]'
                   }`}
                 >
@@ -2475,7 +2465,7 @@ export default function App() {
                       setSelectedGoal('ALL');
                       setOnlyFavorites(false);
                     }}
-                    className="mt-3 px-4 py-2 rounded-xl text-xs font-semibold bg-[#0F4C3A] text-white"
+                    className="mt-3 px-4 py-2 rounded-xl text-xs font-semibold bg-[#0F5B63] text-white"
                   >
                     সব আয়াত দেখুন (Reset Filters)
                   </button>
@@ -2495,10 +2485,10 @@ export default function App() {
                         className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                           isThisSelected
                             ? darkMode
-                              ? 'bg-[#162922] border-[#C59B27] shadow-lg shadow-[#C59B27]/10'
+                              ? 'bg-[#12282C] border-[#C59B27] shadow-lg shadow-[#C59B27]/10'
                               : 'bg-[#FFFDF8] border-[#C59B27] shadow-lg shadow-[#C59B27]/15'
                             : darkMode
-                            ? 'bg-[#13221C] border-[#243A31] hover:border-[#395B4D]'
+                            ? 'bg-[#0F2124] border-[#1E3C40] hover:border-[#395B4D]'
                             : 'bg-white border-[#E5DEC9] hover:border-[#C59B27]/60 shadow-sm'
                         }`}
                       >
@@ -2506,7 +2496,7 @@ export default function App() {
                         <div
                           className={`px-5 py-3.5 border-b flex flex-wrap items-center justify-between gap-3 ${
                             darkMode
-                              ? 'bg-[#0F1B17]/60 border-[#243A31]'
+                              ? 'bg-[#0D1B1D]/60 border-[#1E3C40]'
                               : 'bg-[#FAF7EF] border-[#ECE5D3]'
                           }`}
                         >
@@ -2516,8 +2506,8 @@ export default function App() {
                               onClick={() => playEntry(entry.id, 0)}
                               className={`w-10 h-10 rounded-full flex items-center justify-center transition shadow-sm cursor-pointer ${
                                 isThisPlaying
-                                  ? 'bg-[#C59B27] text-[#0D1613]'
-                                  : 'bg-[#0F4C3A] text-white hover:bg-[#166850]'
+                                  ? 'bg-[#C59B27] text-[#0B1718]'
+                                  : 'bg-[#0F5B63] text-white hover:bg-[#13707B]'
                               }`}
                               title={isThisPlaying ? 'Pause Recitation' : 'Play Recitation'}
                             >
@@ -2530,10 +2520,10 @@ export default function App() {
 
                             <div>
                               <div className="flex items-center gap-2 flex-wrap">
-                                <span className="font-bn-serif font-bold text-base sm:text-lg text-[#0F4C3A] dark:text-[#F2D16B]">
+                                <span className="font-bn-serif font-bold text-base sm:text-lg text-[#0F5B63] dark:text-[#F2D16B]">
                                   {entry.labelBn}
                                 </span>
-                                <span className="text-xs px-2.5 py-0.5 rounded-full font-bn-sans font-medium bg-[#0F4C3A]/10 text-[#0F4C3A] dark:bg-[#C59B27]/20 dark:text-[#E5C158]">
+                                <span className="text-xs px-2.5 py-0.5 rounded-full font-bn-sans font-medium bg-[#0F5B63]/10 text-[#0F5B63] dark:bg-[#C59B27]/20 dark:text-[#E5C158]">
                                   {entry.surahBn}
                                 </span>
                                 {entry.isSajdah && (
@@ -2554,16 +2544,16 @@ export default function App() {
                             <div
                               className={`flex items-center rounded-xl border text-xs overflow-hidden ${
                                 darkMode
-                                  ? 'bg-[#0D1613] border-[#243A31]'
+                                  ? 'bg-[#0B1718] border-[#1E3C40]'
                                   : 'bg-white border-[#DFD5BC]'
                               }`}
                             >
                               <button
                                 onClick={() => incrementTasbih(entry.id)}
-                                className="px-2.5 py-1.5 font-bn-sans font-semibold hover:bg-[#0F4C3A]/10 flex items-center gap-1 transition cursor-pointer"
+                                className="px-2.5 py-1.5 font-bn-sans font-semibold hover:bg-[#0F5B63]/10 flex items-center gap-1 transition cursor-pointer"
                                 title="Click to count recitation (Tasbih)"
                               >
-                                <span className="text-[#0F4C3A] dark:text-[#E5C158]">পাঠ:</span>
+                                <span className="text-[#0F5B63] dark:text-[#E5C158]">পাঠ:</span>
                                 <span className="font-bold">{toBnDigits(count)}×</span>
                               </button>
                               {count > 0 && (
@@ -2618,7 +2608,7 @@ export default function App() {
                             <div
                               dir="rtl"
                               style={{ fontSize: `${arabicSize}px` }}
-                              className="font-arabic text-right leading-loose tracking-normal py-2 px-3 rounded-xl bg-[#0F4C3A]/[0.03] dark:bg-white/[0.02]"
+                              className="font-arabic text-right leading-loose tracking-normal py-2 px-3 rounded-xl bg-[#0F5B63]/[0.03] dark:bg-white/[0.02]"
                             >
                               {entry.ayahs.map((ayahObj, idx) => {
                                 const key = `${ayahObj.surah}:${ayahObj.ayah}`;
@@ -2633,7 +2623,7 @@ export default function App() {
                                     title="Click to play from this Ayah"
                                     className={`cursor-pointer rounded-lg px-1 transition-colors ${
                                       isAyahActive
-                                        ? 'bg-[#C59B27]/25 text-[#0F4C3A] dark:text-[#FFE082]'
+                                        ? 'bg-[#C59B27]/25 text-[#0F5B63] dark:text-[#FFE082]'
                                         : 'hover:bg-[#C59B27]/10'
                                     }`}
                                   >
@@ -2661,9 +2651,9 @@ export default function App() {
                           {visibleLayers.bengali && (
                             <div
                               style={{ fontSize: `${bengaliSize}px` }}
-                              className="font-bn-serif leading-relaxed text-[#1D2B24] dark:text-[#EAE6DC]"
+                              className="font-bn-serif leading-relaxed text-[#152B2E] dark:text-[#EAE6DC]"
                             >
-                              <span className="text-xs font-bn-sans font-bold uppercase tracking-wider text-[#0F4C3A] dark:text-[#E5C158] block mb-1">
+                              <span className="text-xs font-bn-sans font-bold uppercase tracking-wider text-[#0F5B63] dark:text-[#E5C158] block mb-1">
                                 বাংলা অনুবাদ:
                               </span>
                               “{entry.bnTranslation}”
@@ -2683,13 +2673,13 @@ export default function App() {
                               <div
                                 className={`rounded-xl p-4 border text-sm font-bn-sans space-y-2 ${
                                   darkMode
-                                    ? 'bg-[#0D1613]/80 border-[#243A31]'
+                                    ? 'bg-[#0B1718]/80 border-[#1E3C40]'
                                     : 'bg-[#FAF8F3] border-[#E8E1CE]'
                                 }`}
                               >
                                 {entry.benefitsBn?.length > 0 && (
                                   <div>
-                                    <div className="font-bold text-xs uppercase tracking-wider text-[#0F4C3A] dark:text-[#E5C158] mb-1.5 flex items-center gap-1.5">
+                                    <div className="font-bold text-xs uppercase tracking-wider text-[#0F5B63] dark:text-[#E5C158] mb-1.5 flex items-center gap-1.5">
                                       <Sparkles size={13} className="text-[#C59B27]" />
                                       <span>ফজিলত ও উপকারিতা (Spiritual Benefits):</span>
                                     </div>
@@ -2730,8 +2720,8 @@ export default function App() {
         <div
           className={`fixed bottom-0 inset-x-0 z-50 border-t backdrop-blur-lg shadow-2xl transition-colors ${
             darkMode
-              ? 'bg-[#0F1C17]/95 border-[#C59B27]/50 text-[#EAE6DC]'
-              : 'bg-[#FFFFFF]/95 border-[#C59B27]/60 text-[#1D2B24]'
+              ? 'bg-[#0D1C1E]/95 border-[#C59B27]/50 text-[#EAE6DC]'
+              : 'bg-[#FFFFFF]/95 border-[#C59B27]/60 text-[#152B2E]'
           }`}
         >
           {/* Interactive Progress Scrub Bar */}
@@ -2745,7 +2735,7 @@ export default function App() {
             }}
           >
             <div
-              className="h-full bg-gradient-to-r from-[#0F4C3A] to-[#C59B27] transition-all duration-150"
+              className="h-full bg-gradient-to-r from-[#0F5B63] to-[#C59B27] transition-all duration-150"
               style={{
                 width: `${audioDuration ? (audioProgress / audioDuration) * 100 : 0}%`
               }}
@@ -2762,7 +2752,7 @@ export default function App() {
             {/* Currently Playing Info */}
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2">
-                <span className="font-bn-serif font-bold text-sm sm:text-base truncate text-[#0F4C3A] dark:text-[#F2D16B]">
+                <span className="font-bn-serif font-bold text-sm sm:text-base truncate text-[#0F5B63] dark:text-[#F2D16B]">
                   {currentEntry.labelBn}
                 </span>
                 <span className="text-xs px-2 py-0.5 rounded-full bg-[#C59B27]/20 text-[#9A7414] dark:text-[#E5C158] font-bn-sans shrink-0">
@@ -2788,7 +2778,7 @@ export default function App() {
 
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
-                className="w-11 h-11 rounded-full bg-[#0F4C3A] hover:bg-[#166850] text-white flex items-center justify-center shadow-md border border-[#C59B27] transition cursor-pointer"
+                className="w-11 h-11 rounded-full bg-[#0F5B63] hover:bg-[#13707B] text-white flex items-center justify-center shadow-md border border-[#C59B27] transition cursor-pointer"
                 title={isPlaying ? 'Pause' : 'Play'}
               >
                 {isPlaying ? (
@@ -2814,7 +2804,7 @@ export default function App() {
                 onClick={cycleRepeatMode}
                 className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold border flex items-center gap-1 transition ${
                   repeatMode !== 'none'
-                    ? 'bg-[#C59B27] text-[#0D1613] border-[#C59B27]'
+                    ? 'bg-[#C59B27] text-[#0B1718] border-[#C59B27]'
                     : 'border-[#C59B27]/30 opacity-75 hover:opacity-100'
                 }`}
                 title="Toggle Loop Mode (Off / 3x / Infinite)"
@@ -2834,7 +2824,7 @@ export default function App() {
                 onClick={() => setContinuousMode(!continuousMode)}
                 className={`px-2.5 py-1.5 rounded-lg text-xs font-bn-sans font-semibold border transition ${
                   continuousMode
-                    ? 'bg-[#0F4C3A] text-white border-[#0F4C3A]'
+                    ? 'bg-[#0F5B63] text-white border-[#0F5B63]'
                     : 'border-[#C59B27]/30 opacity-75'
                 }`}
                 title="Auto-advance to next prayer in chapter"
@@ -2849,66 +2839,6 @@ export default function App() {
                 title={isMuted ? 'Unmute' : 'Mute'}
               >
                 {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* =====================================================================
-          VERCEL DEPLOYMENT INSTRUCTIONS MODAL
-      ===================================================================== */}
-      {showDeployModal && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div
-            className={`max-w-lg w-full rounded-2xl border p-6 shadow-2xl space-y-4 ${
-              darkMode
-                ? 'bg-[#13221C] border-[#C59B27]/50 text-[#EAE6DC]'
-                : 'bg-white border-[#C59B27] text-[#1D2B24]'
-            }`}
-          >
-            <div className="flex items-center justify-between border-b border-[#C59B27]/30 pb-3">
-              <h3 className="font-bn-serif font-bold text-lg text-[#0F4C3A] dark:text-[#F2D16B]">
-                Deploy on Vercel in 60 Seconds
-              </h3>
-              <button
-                onClick={() => setShowDeployModal(false)}
-                className="p-1 rounded-lg hover:bg-[#C59B27]/15"
-              >
-                <X size={18} />
-              </button>
-            </div>
-
-            <div className="space-y-3 text-sm leading-relaxed">
-              <p className="opacity-90">
-                This application is a self-contained React component using{' '}
-                <strong>Tailwind CSS</strong> and <strong>Lucide Icons</strong>, with live
-                streaming audio from <strong>EveryAyah.com</strong> and Uthmani script from{' '}
-                <strong>AlQuran Cloud</strong> (zero backend required).
-              </p>
-
-              <div
-                className={`p-3.5 rounded-xl font-mono text-xs space-y-1.5 border ${
-                  darkMode ? 'bg-[#0D1613] border-[#243A31]' : 'bg-[#FAF8F3] border-[#E5DEC9]'
-                }`}
-              >
-                <div className="text-[#C59B27] font-semibold"># 1. Scaffold Vite React app</div>
-                <div>npm create vite@latest quraner-monajat -- --template react</div>
-                <div>cd quraner-monajat</div>
-                <div>npm install lucide-react tailwindcss @tailwindcss/vite</div>
-                <div className="text-[#C59B27] font-semibold pt-1">
-                  # 2. Replace src/App.jsx with this file & deploy
-                </div>
-                <div>npx vercel --prod</div>
-              </div>
-            </div>
-
-            <div className="flex justify-end pt-2">
-              <button
-                onClick={() => setShowDeployModal(false)}
-                className="px-4 py-2 rounded-xl bg-[#0F4C3A] text-white text-xs font-semibold"
-              >
-                Close
               </button>
             </div>
           </div>
