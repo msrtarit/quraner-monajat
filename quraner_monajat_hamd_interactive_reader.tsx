@@ -2410,7 +2410,7 @@ export default function App() {
     <div
       className={`min-h-screen transition-colors duration-300 ${
         darkMode
-          ? 'bg-[#0B1718] text-[#EAE6DC]'
+          ? 'dark bg-[#0B1718] text-[#EAE6DC]'
           : 'bg-[#F8FAFC] text-[#152B2E]'
       }`}
     >
@@ -3260,13 +3260,17 @@ export default function App() {
 
                           {/* 2. Bengali Translation */}
                           {visibleLayers.bengali && (
-                            <div className="space-y-1">
-                              <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 block">
+                            <div className="space-y-1.5">
+                              <span className={`text-xs font-bold uppercase tracking-wider block ${
+                                darkMode ? 'text-[#2DD4BF]' : 'text-[#0F5B63]'
+                              }`}>
                                 বাংলা অনুবাদ:
                               </span>
                               <p
                                 style={{ fontSize: `${bengaliSize}px` }}
-                                className="font-bn-serif text-slate-900 dark:text-slate-100 font-medium leading-loose"
+                                className={`font-bn-serif font-semibold leading-loose ${
+                                  darkMode ? 'text-[#FFFFFF]' : 'text-[#000000]'
+                                }`}
                               >
                                 “{entry.bnTranslation}”
                               </p>
@@ -3276,7 +3280,9 @@ export default function App() {
                           {/* 3. English Translation */}
                           {visibleLayers.english && (
                             <div className="space-y-1 pl-3.5 border-l-2 border-[#14B8A6]">
-                              <p className="font-en-serif text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+                              <p className={`font-en-serif text-sm sm:text-base leading-relaxed ${
+                                darkMode ? 'text-[#F1F5F9]' : 'text-[#0F172A]'
+                              }`}>
                                 “{entry.enTranslation}”
                               </p>
                             </div>
