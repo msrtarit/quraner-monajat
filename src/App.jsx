@@ -1568,7 +1568,6 @@ export default function App() {
   const [selectedGoal, setSelectedGoal] = useState('ALL');
   const [onlyFavorites, setOnlyFavorites] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const [showDeployModal, setShowDeployModal] = useState(false);
   const [copiedKey, setCopiedKey] = useState(null);
 
   // Display preferences
@@ -1972,7 +1971,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* Right Controls: Reciter Dropdown, Typography Settings, Vercel Guide, Dark Mode */}
+          {/* Right Controls: Reciter Dropdown, Typography Settings, Dark Mode */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Reciter Selector */}
             <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[#C59B27]/40 bg-[#0F4C3A]/5 dark:bg-[#162620]">
@@ -2006,15 +2005,6 @@ export default function App() {
               title="Reading & Display Preferences"
             >
               <Settings size={18} />
-            </button>
-
-            {/* Vercel Host Button */}
-            <button
-              onClick={() => setShowDeployModal(true)}
-              className="hidden sm:flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-[#0F4C3A] text-[#FAF8F3] hover:bg-[#15634C] border border-[#C59B27]/60 shadow-sm transition"
-            >
-              <ExternalLink size={14} className="text-[#E5C158]" />
-              <span>Host on Vercel</span>
             </button>
 
             {/* Dark / Night Reading Mode */}
@@ -2849,66 +2839,6 @@ export default function App() {
                 title={isMuted ? 'Unmute' : 'Mute'}
               >
                 {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* =====================================================================
-          VERCEL DEPLOYMENT INSTRUCTIONS MODAL
-      ===================================================================== */}
-      {showDeployModal && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div
-            className={`max-w-lg w-full rounded-2xl border p-6 shadow-2xl space-y-4 ${
-              darkMode
-                ? 'bg-[#13221C] border-[#C59B27]/50 text-[#EAE6DC]'
-                : 'bg-white border-[#C59B27] text-[#1D2B24]'
-            }`}
-          >
-            <div className="flex items-center justify-between border-b border-[#C59B27]/30 pb-3">
-              <h3 className="font-bn-serif font-bold text-lg text-[#0F4C3A] dark:text-[#F2D16B]">
-                Deploy on Vercel in 60 Seconds
-              </h3>
-              <button
-                onClick={() => setShowDeployModal(false)}
-                className="p-1 rounded-lg hover:bg-[#C59B27]/15"
-              >
-                <X size={18} />
-              </button>
-            </div>
-
-            <div className="space-y-3 text-sm leading-relaxed">
-              <p className="opacity-90">
-                This application is a self-contained React component using{' '}
-                <strong>Tailwind CSS</strong> and <strong>Lucide Icons</strong>, with live
-                streaming audio from <strong>EveryAyah.com</strong> and Uthmani script from{' '}
-                <strong>AlQuran Cloud</strong> (zero backend required).
-              </p>
-
-              <div
-                className={`p-3.5 rounded-xl font-mono text-xs space-y-1.5 border ${
-                  darkMode ? 'bg-[#0D1613] border-[#243A31]' : 'bg-[#FAF8F3] border-[#E5DEC9]'
-                }`}
-              >
-                <div className="text-[#C59B27] font-semibold"># 1. Scaffold Vite React app</div>
-                <div>npm create vite@latest quraner-monajat -- --template react</div>
-                <div>cd quraner-monajat</div>
-                <div>npm install lucide-react tailwindcss @tailwindcss/vite</div>
-                <div className="text-[#C59B27] font-semibold pt-1">
-                  # 2. Replace src/App.jsx with this file & deploy
-                </div>
-                <div>npx vercel --prod</div>
-              </div>
-            </div>
-
-            <div className="flex justify-end pt-2">
-              <button
-                onClick={() => setShowDeployModal(false)}
-                className="px-4 py-2 rounded-xl bg-[#0F4C3A] text-white text-xs font-semibold"
-              >
-                Close
               </button>
             </div>
           </div>
