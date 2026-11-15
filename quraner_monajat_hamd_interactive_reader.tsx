@@ -2423,10 +2423,7 @@ export default function App() {
           line-height: 2.15;
         }
         .font-bn-serif {
-          font-family: 'Hind Siliguri', 'Noto Serif Bengali', sans-serif;
-          font-weight: 500;
-          letter-spacing: 0.01em;
-          -webkit-font-smoothing: antialiased;
+          font-family: 'Noto Serif Bengali', 'Hind Siliguri', serif;
         }
         .font-bn-sans {
           font-family: 'Hind Siliguri', sans-serif;
@@ -3265,12 +3262,12 @@ export default function App() {
                           {visibleLayers.bengali && (
                             <div
                               style={{ fontSize: `${bengaliSize}px` }}
-                              className="font-bn-serif font-medium leading-relaxed text-[#0A1A1C] dark:text-[#F3F4F6] tracking-wide"
+                              className="font-bn-serif leading-relaxed text-[#111827] dark:text-[#EAE6DC]"
                             >
                               <span className="text-xs font-bn-sans font-bold uppercase tracking-wider text-[#0F766E] dark:text-[#2DD4BF] block mb-1">
                                 বাংলা অনুবাদ:
                               </span>
-                              <span className="text-[#091E21] dark:text-[#F3F4F6] font-semibold">“{entry.bnTranslation}”</span>
+                              “{entry.bnTranslation}”
                             </div>
                           )}
 
