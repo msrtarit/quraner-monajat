@@ -2503,7 +2503,7 @@ export default function App() {
             {/* English / Bangla Language Toggle Button */}
             <button
               onClick={toggleLang}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#14B8A6] bg-[#0F5B63]/10 dark:bg-[#14B8A6]/15 hover:bg-[#0F5B63]/20 dark:hover:bg-[#14B8A6]/25 transition font-semibold text-xs text-[#0F5B63] dark:text-[#E11D48] shadow-sm cursor-pointer"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#14B8A6] bg-[#0F5B63]/10 dark:bg-[#14B8A6]/15 hover:bg-[#0F5B63]/20 dark:hover:bg-[#14B8A6]/25 transition font-semibold text-xs text-[#0F5B63] dark:text-[#086f7a] shadow-sm cursor-pointer"
               title={lang === 'bn' ? 'Switch to English version' : 'বাংলা সংস্করণে পরিবর্তন করুন'}
             >
               <Languages size={15} className="text-[#14B8A6]" />
@@ -2787,7 +2787,7 @@ export default function App() {
                       : `Chapter ${currentChapterObj?.numberEn} • ${currentChapterObj?.countLabelEn}`}
                   </span>
                 </div>
-                <h2 className="font-bn-serif font-bold text-2xl sm:text-3xl text-[#0F5B63] dark:text-[#E11D48]">
+                <h2 className="font-bn-serif font-bold text-2xl sm:text-3xl text-[#0F5B63] dark:text-[#086f7a]">
                   {lang === 'bn' ? currentChapterObj?.titleBn : currentChapterObj?.titleEn}
                 </h2>
                 <p className="font-en-serif italic text-sm opacity-80 mt-0.5">
@@ -3129,7 +3129,7 @@ export default function App() {
 
                             <div>
                               <div className="flex items-center gap-2 flex-wrap">
-                                <span className="font-bn-serif font-bold text-base sm:text-lg text-[#0F5B63] dark:text-[#E11D48]">
+                                <span className="font-bn-serif font-bold text-base sm:text-lg text-[#0F5B63] dark:text-[#086f7a]">
                                   {lang === 'bn' ? entry.labelBn : entry.labelEn}
                                 </span>
                                 <span className="text-xs px-2.5 py-0.5 rounded-full font-bn-sans font-semibold bg-[#0F5B63]/15 text-[#0A3D36] dark:bg-[#14B8A6]/20 dark:text-[#2DD4BF] border border-[#0F5B63]/25 dark:border-[#14B8A6]/30">
@@ -3427,7 +3427,7 @@ export default function App() {
             {/* Currently Playing Info */}
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2">
-                <span className="font-bn-serif font-bold text-sm sm:text-base truncate text-[#0F5B63] dark:text-[#E11D48]">
+                <span className="font-bn-serif font-bold text-sm sm:text-base truncate text-[#0F5B63] dark:text-[#086f7a]">
                   {currentEntry.labelBn}
                 </span>
                 <span className="text-xs px-2 py-0.5 rounded-full bg-[#14B8A6]/20 text-[#0F766E] dark:text-[#2DD4BF] font-bn-sans shrink-0">
