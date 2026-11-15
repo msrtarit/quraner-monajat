@@ -2411,7 +2411,7 @@ export default function App() {
       className={`min-h-screen transition-colors duration-300 ${
         darkMode
           ? 'bg-[#0B1718] text-[#EAE6DC]'
-          : 'bg-[#FAF8F3] text-[#152B2E]'
+          : 'bg-[#F8FAFC] text-[#152B2E]'
       }`}
     >
       {/* Google Fonts for Authentic Arabic, Bengali, and Serif English Typography */}
@@ -2423,7 +2423,10 @@ export default function App() {
           line-height: 2.15;
         }
         .font-bn-serif {
-          font-family: 'Noto Serif Bengali', 'Hind Siliguri', serif;
+          font-family: 'Hind Siliguri', 'Noto Serif Bengali', sans-serif;
+          font-weight: 500;
+          letter-spacing: 0.01em;
+          -webkit-font-smoothing: antialiased;
         }
         .font-bn-sans {
           font-family: 'Hind Siliguri', sans-serif;
@@ -2434,7 +2437,7 @@ export default function App() {
 
         /* Subtle manuscript geometric pattern */
         .islamic-pattern {
-          background-image: radial-gradient(rgba(197, 155, 39, 0.14) 1px, transparent 1px);
+          background-image: radial-gradient(rgba(20, 184, 166, 0.12) 1px, transparent 1px);
           background-size: 20px 20px;
         }
 
@@ -2467,7 +2470,7 @@ export default function App() {
         className={`sticky top-0 z-40 border-b backdrop-blur-md transition-colors ${
           darkMode
             ? 'bg-[#0B1718]/90 border-[#1E3C40]'
-            : 'bg-[#FAF8F3]/95 border-[#E5DEC9]'
+            : 'bg-[#F8FAFC]/95 border-[#E2E8F0]'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
@@ -2475,18 +2478,18 @@ export default function App() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg border border-[#C59B27]/40 text-[#C59B27] hover:bg-[#C59B27]/10"
+              className="lg:hidden p-2 rounded-lg border border-[#14B8A6]/40 text-[#14B8A6] hover:bg-[#14B8A6]/10"
               aria-label="Toggle Menu"
             >
               {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0F5B63] to-[#15757F] border border-[#C59B27] flex items-center justify-center shadow-sm text-[#F5E6B8] font-arabic text-xl font-bold">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0F5B63] to-[#15757F] border border-[#14B8A6] flex items-center justify-center shadow-sm text-[#CCFBF1] font-arabic text-xl font-bold">
                 ۞
               </div>
               <div>
-                <h1 className="font-bn-serif font-bold text-lg sm:text-xl leading-tight tracking-tight text-[#0F5B63] dark:text-[#E5C158]">
+                <h1 className="font-bn-serif font-bold text-lg sm:text-xl leading-tight tracking-tight text-[#0F5B63] dark:text-[#2DD4BF]">
                   {lang === 'bn' ? 'কোরআনের মোনাজাত এবং হাম্দ' : 'Quraner Monajat & Hamd'}
                 </h1>
                 <p className="text-xs font-bn-sans opacity-75 hidden sm:block">
@@ -2503,18 +2506,18 @@ export default function App() {
             {/* English / Bangla Language Toggle Button */}
             <button
               onClick={toggleLang}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#C59B27] bg-[#0F5B63]/10 dark:bg-[#C59B27]/15 hover:bg-[#0F5B63]/20 dark:hover:bg-[#C59B27]/25 transition font-semibold text-xs text-[#0F5B63] dark:text-[#F2D16B] shadow-sm cursor-pointer"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#14B8A6] bg-[#0F5B63]/10 dark:bg-[#14B8A6]/15 hover:bg-[#0F5B63]/20 dark:hover:bg-[#14B8A6]/25 transition font-semibold text-xs text-[#0F5B63] dark:text-[#5EEAD4] shadow-sm cursor-pointer"
               title={lang === 'bn' ? 'Switch to English version' : 'বাংলা সংস্করণে পরিবর্তন করুন'}
             >
-              <Languages size={15} className="text-[#C59B27]" />
+              <Languages size={15} className="text-[#14B8A6]" />
               <span className="font-bold">{lang === 'bn' ? 'English' : 'বাংলা'}</span>
             </button>
 
             {/* Reciter Selector */}
-            <div className={`hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[#C59B27]/40 transition ${
+            <div className={`hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[#14B8A6]/40 transition ${
               darkMode ? 'bg-[#122528] text-white' : 'bg-white text-[#152B2E] shadow-xs'
             }`}>
-              <Volume2 size={16} className="text-[#C59B27] shrink-0" />
+              <Volume2 size={16} className="text-[#14B8A6] shrink-0" />
               <select
                 value={reciter}
                 onChange={(e) => setReciter(e.target.value)}
@@ -2541,7 +2544,7 @@ export default function App() {
               className={`p-2 rounded-xl border transition ${
                 showSettings
                   ? 'bg-[#0F5B63] text-white border-[#0F5B63]'
-                  : 'border-[#C59B27]/40 hover:bg-[#C59B27]/10'
+                  : 'border-[#14B8A6]/40 hover:bg-[#14B8A6]/10'
               }`}
               title="Reading & Display Preferences"
             >
@@ -2551,10 +2554,10 @@ export default function App() {
             {/* Dark / Night Reading Mode */}
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-xl border border-[#C59B27]/40 hover:bg-[#C59B27]/10 transition"
+              className="p-2 rounded-xl border border-[#14B8A6]/40 hover:bg-[#14B8A6]/10 transition"
               title={darkMode ? 'Switch to Daylight Parchment Mode' : 'Switch to Night Tahajjud Mode'}
             >
-              {darkMode ? <Sun size={18} className="text-[#E5C158]" /> : <Moon size={18} className="text-[#0F5B63]" />}
+              {darkMode ? <Sun size={18} className="text-[#2DD4BF]" /> : <Moon size={18} className="text-[#0F5B63]" />}
             </button>
           </div>
         </div>
@@ -2563,7 +2566,7 @@ export default function App() {
         {showSettings && (
           <div
             className={`border-t px-4 py-4 transition-all ${
-              darkMode ? 'bg-[#0F2124] border-[#1E3C40]' : 'bg-[#F3EFE4] border-[#E5DEC9]'
+              darkMode ? 'bg-[#0F2124] border-[#1E3C40]' : 'bg-[#F1F5F9] border-[#E2E8F0]'
             }`}
           >
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
@@ -2587,7 +2590,7 @@ export default function App() {
                       className={`px-3 py-1.5 rounded-lg text-xs font-bn-sans font-medium border transition flex items-center gap-1.5 ${
                         visibleLayers[layer.key]
                           ? 'bg-[#0F5B63] text-white border-[#0F5B63]'
-                          : 'border-[#C59B27]/40 opacity-65'
+                          : 'border-[#14B8A6]/40 opacity-65'
                       }`}
                     >
                       {visibleLayers[layer.key] && <Check size={13} />}
@@ -2638,7 +2641,7 @@ export default function App() {
                   <select
                     value={reciter}
                     onChange={(e) => setReciter(e.target.value)}
-                    className={`flex-1 px-2.5 py-1.5 rounded-lg text-xs border border-[#C59B27]/40 ${
+                    className={`flex-1 px-2.5 py-1.5 rounded-lg text-xs border border-[#14B8A6]/40 ${
                       darkMode ? 'bg-[#0B1718] text-white' : 'bg-white text-black'
                     }`}
                   >
@@ -2651,7 +2654,7 @@ export default function App() {
                   <select
                     value={playbackRate}
                     onChange={(e) => setPlaybackRate(Number(e.target.value))}
-                    className={`px-2.5 py-1.5 rounded-lg text-xs border border-[#C59B27]/40 ${
+                    className={`px-2.5 py-1.5 rounded-lg text-xs border border-[#14B8A6]/40 ${
                       darkMode ? 'bg-[#0B1718] text-white' : 'bg-white text-black'
                     }`}
                   >
@@ -2680,11 +2683,11 @@ export default function App() {
             className={`sticky top-22 rounded-2xl border p-4 shadow-sm ${
               darkMode
                 ? 'bg-[#0F2124] border-[#1E3C40]'
-                : 'bg-white border-[#E5DEC9]'
+                : 'bg-white border-[#E2E8F0]'
             }`}
           >
-            <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#C59B27]/30">
-              <span className="font-bn-serif font-bold text-sm uppercase tracking-wider text-[#C59B27]">
+            <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#14B8A6]/30">
+              <span className="font-bn-serif font-bold text-sm uppercase tracking-wider text-[#14B8A6]">
                 {lang === 'bn' ? 'সূচিপত্র • Chapters' : 'Index • Chapters'}
               </span>
               <span className="text-xs opacity-70 font-bn-sans">
@@ -2706,17 +2709,17 @@ export default function App() {
                     }}
                     className={`w-full text-left p-3 rounded-xl border transition-all flex items-start gap-3 ${
                       isActive
-                        ? 'bg-[#0F5B63] text-[#FAF8F3] border-[#C59B27] shadow-md'
+                        ? 'bg-[#0F5B63] text-[#F8FAFC] border-[#14B8A6] shadow-md'
                         : darkMode
                         ? 'border-transparent hover:bg-[#163135]'
-                        : 'border-transparent hover:bg-[#F5F1E6]'
+                        : 'border-transparent hover:bg-[#F0FDFA]'
                     }`}
                   >
                     <span
                       className={`w-7 h-7 rounded-lg flex items-center justify-center font-bn-serif font-bold text-sm shrink-0 mt-0.5 ${
                         isActive
-                          ? 'bg-[#C59B27] text-[#0B1718]'
-                          : 'bg-[#0F5B63]/10 text-[#0F5B63] dark:bg-[#C59B27]/20 dark:text-[#E5C158]'
+                          ? 'bg-[#14B8A6] text-[#0B1718]'
+                          : 'bg-[#0F5B63]/10 text-[#0F5B63] dark:bg-[#14B8A6]/20 dark:text-[#2DD4BF]'
                       }`}
                     >
                       {lang === 'bn' ? chap.number : chap.numberEn}
@@ -2727,7 +2730,7 @@ export default function App() {
                       </div>
                       <div
                         className={`text-[11px] mt-0.5 truncate ${
-                          isActive ? 'text-[#E5DEC9]' : 'opacity-70'
+                          isActive ? 'text-[#E2E8F0]' : 'opacity-70'
                         }`}
                       >
                         {lang === 'bn' ? chap.titleEn : chap.titleBn}
@@ -2735,8 +2738,8 @@ export default function App() {
                       <span
                         className={`inline-block mt-1.5 text-[10px] px-2 py-0.5 rounded-full font-bn-sans ${
                           isActive
-                            ? 'bg-white/15 text-[#F5E6B8]'
-                            : 'bg-[#C59B27]/15 text-[#9A7414] dark:text-[#E5C158]'
+                            ? 'bg-white/15 text-[#CCFBF1]'
+                            : 'bg-[#14B8A6]/15 text-[#0F766E] dark:text-[#2DD4BF]'
                         }`}
                       >
                         {lang === 'bn' ? chap.countLabel : chap.countLabelEn}
@@ -2748,16 +2751,16 @@ export default function App() {
             </nav>
 
             {/* Quick Stats / Tasbih Summary */}
-            <div className="mt-5 pt-4 border-t border-[#C59B27]/30 space-y-2.5">
+            <div className="mt-5 pt-4 border-t border-[#14B8A6]/30 space-y-2.5">
               <div className="flex items-center justify-between text-xs font-bn-sans">
                 <span className="opacity-75">{lang === 'bn' ? 'সংরক্ষিত দোয়া (Bookmarks):' : 'Saved Bookmarks:'}</span>
-                <span className="font-bold text-[#0F5B63] dark:text-[#E5C158]">
+                <span className="font-bold text-[#0F5B63] dark:text-[#2DD4BF]">
                   {lang === 'bn' ? `${toBnDigits(favorites.length)} টি` : `${favorites.length} items`}
                 </span>
               </div>
               <div className="flex items-center justify-between text-xs font-bn-sans">
                 <span className="opacity-75">{lang === 'bn' ? 'মোট তিলাওয়াত (Recitations):' : 'Total Recitations:'}</span>
-                <span className="font-bold text-[#0F5B63] dark:text-[#E5C158]">
+                <span className="font-bold text-[#0F5B63] dark:text-[#2DD4BF]">
                   {lang === 'bn'
                     ? `${toBnDigits(Object.values(tasbihCounts).reduce((acc, v) => acc + v, 0))} বার`
                     : `${Object.values(tasbihCounts).reduce((acc, v) => acc + v, 0)} times`}
@@ -2774,12 +2777,12 @@ export default function App() {
             className={`rounded-2xl border p-5 sm:p-7 mb-6 islamic-pattern relative overflow-hidden ${
               darkMode
                 ? 'bg-gradient-to-br from-[#0E2326] to-[#0D1B1D] border-[#23474C]'
-                : 'bg-gradient-to-br from-[#FFFFFF] to-[#F4EFE2] border-[#DFD5BC]'
+                : 'bg-gradient-to-br from-[#FFFFFF] to-[#F1F5F9] border-[#CBD5E1]'
             }`}
           >
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bn-sans font-semibold bg-[#C59B27]/15 text-[#9A7414] dark:text-[#E5C158] border border-[#C59B27]/30 mb-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bn-sans font-semibold bg-[#14B8A6]/15 text-[#0F766E] dark:text-[#2DD4BF] border border-[#14B8A6]/30 mb-2">
                   <Sparkles size={13} />
                   <span>
                     {lang === 'bn'
@@ -2787,7 +2790,7 @@ export default function App() {
                       : `Chapter ${currentChapterObj?.numberEn} • ${currentChapterObj?.countLabelEn}`}
                   </span>
                 </div>
-                <h2 className="font-bn-serif font-bold text-2xl sm:text-3xl text-[#0F5B63] dark:text-[#F2D16B]">
+                <h2 className="font-bn-serif font-bold text-2xl sm:text-3xl text-[#0F5B63] dark:text-[#5EEAD4]">
                   {lang === 'bn' ? currentChapterObj?.titleBn : currentChapterObj?.titleEn}
                 </h2>
                 <p className="font-en-serif italic text-sm opacity-80 mt-0.5">
@@ -2802,9 +2805,9 @@ export default function App() {
                 <div className="flex flex-wrap items-center gap-2.5 shrink-0">
                   <button
                     onClick={playEntireChapter}
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0F5B63] hover:bg-[#13707B] text-white font-bn-sans font-semibold text-sm shadow-md border border-[#C59B27]/50 transition cursor-pointer"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0F5B63] hover:bg-[#13707B] text-white font-bn-sans font-semibold text-sm shadow-md border border-[#14B8A6]/50 transition cursor-pointer"
                   >
-                    <ListMusic size={18} className="text-[#E5C158]" />
+                    <ListMusic size={18} className="text-[#2DD4BF]" />
                     <span>{lang === 'bn' ? 'সম্পূর্ণ পর্ব শুনুন (Play All)' : 'Play Full Chapter'}</span>
                   </button>
                 </div>
@@ -2822,16 +2825,16 @@ export default function App() {
                 className={`rounded-2xl border p-6 shadow-sm ${
                   darkMode
                     ? 'bg-[#0F2124] border-[#1E3C40]'
-                    : 'bg-white border-[#E5DEC9]'
+                    : 'bg-white border-[#E2E8F0]'
                 }`}
               >
-                <div className="flex items-center gap-2.5 text-[#0F5B63] dark:text-[#E5C158] mb-3">
+                <div className="flex items-center gap-2.5 text-[#0F5B63] dark:text-[#2DD4BF] mb-3">
                   <BookOpen size={20} />
                   <h3 className="font-bn-serif font-bold text-xl">
                     ভূমিকা (Author’s Preface)
                   </h3>
                 </div>
-                <p className="font-arabic text-xl text-center py-3 text-[#0F5B63] dark:text-[#E5C158]">
+                <p className="font-arabic text-xl text-center py-3 text-[#0F5B63] dark:text-[#2DD4BF]">
                   بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
                 </p>
                 {lang === 'bn' ? (
@@ -2848,7 +2851,7 @@ export default function App() {
                       করতে শিখিয়েছেন। আল্লাহর শেখানো ভাষাতে তাঁর কাছে প্রার্থনা করলে এবং তাঁর
                       শেখানো ভাষাতে প্রশংসা করলে তিনি সবচেয়ে বেশি খুশি হন।
                     </p>
-                    <p className="text-sm italic opacity-75 pt-2 border-t border-[#C59B27]/20">
+                    <p className="text-sm italic opacity-75 pt-2 border-t border-[#14B8A6]/20">
                       — বিনীত, এস. এম. জাকির হুসাইন (ফেব্রুয়ারি ২০০২, ঢাকা)
                     </p>
                     <div className="pt-3">
@@ -2856,7 +2859,7 @@ export default function App() {
                         href="https://www.rokomari.com/book/9222/quraner-monajat-and-hamd"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-[#C59B27] hover:bg-[#B38A1F] text-[#0B1718] transition shadow-sm"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-[#14B8A6] hover:bg-[#B38A1F] text-[#0B1718] transition shadow-sm"
                       >
                         <ShoppingBag size={14} />
                         <span>মূল বইটি রকমারি থেকে সংগ্রহ করুন (Order on Rokomari)</span>
@@ -2877,7 +2880,7 @@ export default function App() {
                       praises Himself and instructs us in the very words to supplicate unto Him. Praying and praising
                       Allah in the words He Himself revealed is the most beloved to Him.
                     </p>
-                    <p className="text-sm italic opacity-75 pt-2 border-t border-[#C59B27]/20">
+                    <p className="text-sm italic opacity-75 pt-2 border-t border-[#14B8A6]/20">
                       — S. M. Zakir Hussain (February 2002, Dhaka)
                     </p>
                     <div className="pt-3 font-sans">
@@ -2885,7 +2888,7 @@ export default function App() {
                         href="https://www.rokomari.com/book/9222/quraner-monajat-and-hamd"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-[#C59B27] hover:bg-[#B38A1F] text-[#0B1718] transition shadow-sm"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-[#14B8A6] hover:bg-[#B38A1F] text-[#0B1718] transition shadow-sm"
                       >
                         <ShoppingBag size={14} />
                         <span>Order Original Physical Book on Rokomari</span>
@@ -2901,10 +2904,10 @@ export default function App() {
                 className={`rounded-2xl border p-6 shadow-sm ${
                   darkMode
                     ? 'bg-[#0F2124] border-[#1E3C40]'
-                    : 'bg-white border-[#E5DEC9]'
+                    : 'bg-white border-[#E2E8F0]'
                 }`}
               >
-                <h3 className="font-bn-serif font-bold text-lg text-[#0F5B63] dark:text-[#E5C158] mb-4">
+                <h3 className="font-bn-serif font-bold text-lg text-[#0F5B63] dark:text-[#2DD4BF] mb-4">
                   {lang === 'bn' ? 'দোয়া কবুলের ধারাবাহিক আদব (Recommended Sequence)' : 'Recommended Sequence of Supplication'}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -2939,10 +2942,10 @@ export default function App() {
                       className={`p-4 rounded-xl border ${
                         darkMode
                           ? 'bg-[#0B1718] border-[#1E3C40]'
-                          : 'bg-[#FAF8F3] border-[#E5DEC9]'
+                          : 'bg-[#F8FAFC] border-[#E2E8F0]'
                       }`}
                     >
-                      <div className="font-bn-serif font-bold text-sm text-[#C59B27] mb-1">
+                      <div className="font-bn-serif font-bold text-sm text-[#14B8A6] mb-1">
                         {lang === 'bn' ? item.stepBn : item.stepEn}
                       </div>
                       <p className="font-bn-sans text-xs leading-relaxed opacity-85">
@@ -2958,10 +2961,10 @@ export default function App() {
                 className={`rounded-2xl border p-6 shadow-sm ${
                   darkMode
                     ? 'bg-[#0F2124] border-[#1E3C40]'
-                    : 'bg-white border-[#E5DEC9]'
+                    : 'bg-white border-[#E2E8F0]'
                 }`}
               >
-                <h3 className="font-bn-serif font-bold text-lg text-[#0F5B63] dark:text-[#E5C158] mb-2">
+                <h3 className="font-bn-serif font-bold text-lg text-[#0F5B63] dark:text-[#2DD4BF] mb-2">
                   উচ্চারণ নির্দেশিকা (Transliteration Guide)
                 </h3>
                 <p className="font-bn-sans text-sm opacity-80 mb-4">
@@ -2969,10 +2972,10 @@ export default function App() {
                     ? 'বাংলায় আরবি উচ্চারণের ভুল এড়ানোর জন্য বইটিতে ব্যবহৃত বিশেষ চিহ্নসমূহ:'
                     : 'Special phonetic symbols used in the original book to ensure accurate transliteration:'}
                 </p>
-                <div className="divide-y divide-[#C59B27]/20">
+                <div className="divide-y divide-[#14B8A6]/20">
                   {PRONUNCIATION_RULES.map((rule, idx) => (
                     <div key={idx} className="py-3 flex flex-col sm:flex-row sm:items-center gap-2">
-                      <span className="inline-block w-36 shrink-0 font-bn-serif font-bold text-base text-[#0F5B63] dark:text-[#E5C158]">
+                      <span className="inline-block w-36 shrink-0 font-bn-serif font-bold text-base text-[#0F5B63] dark:text-[#2DD4BF]">
                         {rule.symbol}
                       </span>
                       <span className="font-bn-sans text-sm opacity-90">{rule.desc}</span>
@@ -2991,7 +2994,7 @@ export default function App() {
                 className={`rounded-2xl border p-4 mb-6 space-y-3 ${
                   darkMode
                     ? 'bg-[#0F2124] border-[#1E3C40]'
-                    : 'bg-white border-[#E5DEC9]'
+                    : 'bg-white border-[#E2E8F0]'
                 }`}
               >
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -3010,10 +3013,10 @@ export default function App() {
                           ? 'সূরার নাম, অর্থ বা ফজিলত খুঁজুন (যেমন: বাকারাহ, ক্ষমা, ধৈর্য, সন্তান, শান্তি)...'
                           : 'Search by surah name, meaning, or topic (e.g. Baqarah, forgiveness, patience)...'
                       }
-                      className={`w-full pl-10 pr-4 py-2 rounded-xl text-sm font-bn-sans border focus:outline-none focus:border-[#C59B27] ${
+                      className={`w-full pl-10 pr-4 py-2 rounded-xl text-sm font-bn-sans border focus:outline-none focus:border-[#14B8A6] ${
                         darkMode
                           ? 'bg-[#0B1718] border-[#1E3C40] text-white'
-                          : 'bg-[#FAF8F3] border-[#E5DEC9] text-[#152B2E]'
+                          : 'bg-[#F8FAFC] border-[#E2E8F0] text-[#152B2E]'
                       }`}
                     />
                   </div>
@@ -3023,8 +3026,8 @@ export default function App() {
                     onClick={() => setOnlyFavorites(!onlyFavorites)}
                     className={`px-4 py-2 rounded-xl text-xs font-bn-sans font-semibold border flex items-center justify-center gap-2 transition shrink-0 ${
                       onlyFavorites
-                        ? 'bg-[#C59B27] text-[#0B1718] border-[#C59B27]'
-                        : 'border-[#C59B27]/40 hover:bg-[#C59B27]/10'
+                        ? 'bg-[#14B8A6] text-[#0B1718] border-[#14B8A6]'
+                        : 'border-[#14B8A6]/40 hover:bg-[#14B8A6]/10'
                     }`}
                   >
                     <Bookmark size={15} fill={onlyFavorites ? 'currentColor' : 'none'} />
@@ -3045,7 +3048,7 @@ export default function App() {
                       className={`px-3 py-1 rounded-full text-xs font-bn-sans whitespace-nowrap border transition ${
                         selectedGoal === goal.id
                           ? 'bg-[#0F5B63] text-white border-[#0F5B63]'
-                          : 'border-[#C59B27]/30 opacity-80 hover:opacity-100'
+                          : 'border-[#14B8A6]/30 opacity-80 hover:opacity-100'
                       }`}
                     >
                       {lang === 'bn' ? goal.labelBn : goal.labelEn}
@@ -3060,7 +3063,7 @@ export default function App() {
                   className={`rounded-2xl border p-12 text-center ${
                     darkMode
                       ? 'bg-[#0F2124] border-[#1E3C40]'
-                      : 'bg-white border-[#E5DEC9]'
+                      : 'bg-white border-[#E2E8F0]'
                   }`}
                 >
                   <p className="font-bn-serif text-lg opacity-75">
@@ -3094,11 +3097,11 @@ export default function App() {
                         className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                           isThisSelected
                             ? darkMode
-                              ? 'bg-[#12282C] border-[#C59B27] shadow-lg shadow-[#C59B27]/10'
-                              : 'bg-[#FFFDF8] border-[#C59B27] shadow-lg shadow-[#C59B27]/15'
+                              ? 'bg-[#12282C] border-[#14B8A6] shadow-lg shadow-[#14B8A6]/10'
+                              : 'bg-[#FFFFFF] border-[#14B8A6] shadow-lg shadow-[#14B8A6]/15'
                             : darkMode
                             ? 'bg-[#0F2124] border-[#1E3C40] hover:border-[#395B4D]'
-                            : 'bg-white border-[#E5DEC9] hover:border-[#C59B27]/60 shadow-sm'
+                            : 'bg-white border-[#E2E8F0] hover:border-[#14B8A6]/60 shadow-sm'
                         }`}
                       >
                         {/* Card Top Header */}
@@ -3106,7 +3109,7 @@ export default function App() {
                           className={`px-5 py-3.5 border-b flex flex-wrap items-center justify-between gap-3 ${
                             darkMode
                               ? 'bg-[#0D1B1D]/60 border-[#1E3C40]'
-                              : 'bg-[#FAF7EF] border-[#ECE5D3]'
+                              : 'bg-[#F8FAFC] border-[#E2E8F0]'
                           }`}
                         >
                           <div className="flex items-center gap-3">
@@ -3115,7 +3118,7 @@ export default function App() {
                               onClick={() => playEntry(entry.id, 0)}
                               className={`w-10 h-10 rounded-full flex items-center justify-center transition shadow-sm cursor-pointer ${
                                 isThisPlaying
-                                  ? 'bg-[#C59B27] text-[#0B1718]'
+                                  ? 'bg-[#14B8A6] text-[#0B1718]'
                                   : 'bg-[#0F5B63] text-white hover:bg-[#13707B]'
                               }`}
                               title={isThisPlaying ? 'Pause Recitation' : 'Play Recitation'}
@@ -3129,10 +3132,10 @@ export default function App() {
 
                             <div>
                               <div className="flex items-center gap-2 flex-wrap">
-                                <span className="font-bn-serif font-bold text-base sm:text-lg text-[#0F5B63] dark:text-[#F2D16B]">
+                                <span className="font-bn-serif font-bold text-base sm:text-lg text-[#0F5B63] dark:text-[#5EEAD4]">
                                   {lang === 'bn' ? entry.labelBn : entry.labelEn}
                                 </span>
-                                <span className="text-xs px-2.5 py-0.5 rounded-full font-bn-sans font-medium bg-[#0F5B63]/10 text-[#0F5B63] dark:bg-[#C59B27]/20 dark:text-[#E5C158]">
+                                <span className="text-xs px-2.5 py-0.5 rounded-full font-bn-sans font-medium bg-[#0F5B63]/10 text-[#0F5B63] dark:bg-[#14B8A6]/20 dark:text-[#2DD4BF]">
                                   {lang === 'bn' ? entry.surahBn : entry.surahEn}
                                 </span>
                                 {entry.isSajdah && (
@@ -3156,7 +3159,7 @@ export default function App() {
                               className={`flex items-center rounded-xl border text-xs overflow-hidden ${
                                 darkMode
                                   ? 'bg-[#0B1718] border-[#1E3C40]'
-                                  : 'bg-white border-[#DFD5BC]'
+                                  : 'bg-white border-[#CBD5E1]'
                               }`}
                             >
                               <button
@@ -3164,13 +3167,13 @@ export default function App() {
                                 className="px-2.5 py-1.5 font-bn-sans font-semibold hover:bg-[#0F5B63]/10 flex items-center gap-1 transition cursor-pointer"
                                 title="Click to count recitation (Tasbih)"
                               >
-                                <span className="text-[#0F5B63] dark:text-[#E5C158]">{lang === 'bn' ? 'পাঠ:' : 'Count:'}</span>
+                                <span className="text-[#0F5B63] dark:text-[#2DD4BF]">{lang === 'bn' ? 'পাঠ:' : 'Count:'}</span>
                                 <span className="font-bold">{lang === 'bn' ? `${toBnDigits(count)}×` : `${count}×`}</span>
                               </button>
                               {count > 0 && (
                                 <button
                                   onClick={() => resetTasbih(entry.id)}
-                                  className="px-1.5 py-1.5 opacity-60 hover:opacity-100 border-l border-[#C59B27]/20"
+                                  className="px-1.5 py-1.5 opacity-60 hover:opacity-100 border-l border-[#14B8A6]/20"
                                   title="Reset counter"
                                 >
                                   <RotateCcw size={12} />
@@ -3187,7 +3190,7 @@ export default function App() {
                                 const shareText = `${entry.labelBn} (${entry.surahBn})\n${arabicFull}\n\nঅর্থ: ${entry.bnTranslation}\nEnglish: ${entry.enTranslation}`;
                                 copyToClipboard(shareText, entry.id);
                               }}
-                              className="p-2 rounded-xl border border-[#C59B27]/30 hover:bg-[#C59B27]/10 transition"
+                              className="p-2 rounded-xl border border-[#14B8A6]/30 hover:bg-[#14B8A6]/10 transition"
                               title="Copy Verse & Translation"
                             >
                               {copiedKey === entry.id ? (
@@ -3202,8 +3205,8 @@ export default function App() {
                               onClick={() => toggleFavorite(entry.id)}
                               className={`p-2 rounded-xl border transition ${
                                 isFav
-                                  ? 'bg-[#C59B27]/20 border-[#C59B27] text-[#C59B27]'
-                                  : 'border-[#C59B27]/30 opacity-75 hover:opacity-100'
+                                  ? 'bg-[#14B8A6]/20 border-[#14B8A6] text-[#14B8A6]'
+                                  : 'border-[#14B8A6]/30 opacity-75 hover:opacity-100'
                               }`}
                               title={isFav ? 'Remove Bookmark' : 'Save to Favorites'}
                             >
@@ -3234,14 +3237,14 @@ export default function App() {
                                     title="Click to play from this Ayah"
                                     className={`cursor-pointer rounded-lg px-1 transition-colors ${
                                       isAyahActive
-                                        ? 'bg-[#C59B27]/25 text-[#0F5B63] dark:text-[#FFE082]'
-                                        : 'hover:bg-[#C59B27]/10'
+                                        ? 'bg-[#14B8A6]/25 text-[#0F5B63] dark:text-[#99F6E4]'
+                                        : 'hover:bg-[#14B8A6]/10'
                                     }`}
                                   >
                                     {text ? (
                                       <>
                                         {text}{' '}
-                                        <span className="inline-block text-[#C59B27] text-[0.75em] mx-1">
+                                        <span className="inline-block text-[#14B8A6] text-[0.75em] mx-1">
                                           ﴿{ayahObj.ayah}﴾
                                         </span>
                                       </>
@@ -3262,18 +3265,18 @@ export default function App() {
                           {visibleLayers.bengali && (
                             <div
                               style={{ fontSize: `${bengaliSize}px` }}
-                              className="font-bn-serif leading-relaxed text-[#152B2E] dark:text-[#EAE6DC]"
+                              className="font-bn-serif font-medium leading-relaxed text-[#0A1A1C] dark:text-[#F3F4F6] tracking-wide"
                             >
-                              <span className="text-xs font-bn-sans font-bold uppercase tracking-wider text-[#0F5B63] dark:text-[#E5C158] block mb-1">
+                              <span className="text-xs font-bn-sans font-bold uppercase tracking-wider text-[#0F766E] dark:text-[#2DD4BF] block mb-1">
                                 বাংলা অনুবাদ:
                               </span>
-                              “{entry.bnTranslation}”
+                              <span className="text-[#091E21] dark:text-[#F3F4F6] font-semibold">“{entry.bnTranslation}”</span>
                             </div>
                           )}
 
                           {/* 3. English Translation */}
                           {visibleLayers.english && (
-                            <div className="font-en-serif text-sm sm:text-base leading-relaxed opacity-85 pl-3.5 border-l-2 border-[#C59B27]">
+                            <div className="font-en-serif text-sm sm:text-base leading-relaxed opacity-85 pl-3.5 border-l-2 border-[#14B8A6]">
                               “{entry.enTranslation}”
                             </div>
                           )}
@@ -3285,20 +3288,20 @@ export default function App() {
                                 className={`rounded-xl p-4 border text-sm font-bn-sans space-y-2 ${
                                   darkMode
                                     ? 'bg-[#0B1718]/80 border-[#1E3C40]'
-                                    : 'bg-[#FAF8F3] border-[#E8E1CE]'
+                                    : 'bg-[#F8FAFC] border-[#E2E8F0]'
                                 }`}
                               >
                                 {entry.benefitsBn?.length > 0 && (
                                   <div>
-                                    <div className="font-bold text-xs uppercase tracking-wider text-[#0F5B63] dark:text-[#E5C158] mb-1.5 flex items-center gap-1.5">
-                                      <Sparkles size={13} className="text-[#C59B27]" />
+                                    <div className="font-bold text-xs uppercase tracking-wider text-[#0F5B63] dark:text-[#2DD4BF] mb-1.5 flex items-center gap-1.5">
+                                      <Sparkles size={13} className="text-[#14B8A6]" />
                                       <span>
                                         {lang === 'bn'
                                           ? 'ফজিলত ও উপকারিতা (Spiritual Benefits):'
                                           : 'Spiritual Benefits & Context:'}
                                       </span>
                                     </div>
-                                    <ul className="space-y-1 pl-4 list-disc marker:text-[#C59B27] opacity-90">
+                                    <ul className="space-y-1 pl-4 list-disc marker:text-[#14B8A6] opacity-90">
                                       {((lang === 'en' && TRANSLATIONS_EN[entry.id]?.benefitsEn)
                                         ? TRANSLATIONS_EN[entry.id].benefitsEn
                                         : entry.benefitsBn
@@ -3310,10 +3313,10 @@ export default function App() {
                                 )}
 
                                 {entry.noteBn && (
-                                  <div className="pt-2 border-t border-[#C59B27]/20 text-xs opacity-85 flex items-start gap-2">
+                                  <div className="pt-2 border-t border-[#14B8A6]/20 text-xs opacity-85 flex items-start gap-2">
                                     <Info
                                       size={14}
-                                      className="text-[#C59B27] shrink-0 mt-0.5"
+                                      className="text-[#14B8A6] shrink-0 mt-0.5"
                                     />
                                     <span>
                                       {(lang === 'en' && TRANSLATIONS_EN[entry.id]?.noteEn)
@@ -3344,7 +3347,7 @@ export default function App() {
         } ${
           darkMode
             ? 'bg-[#0B1718] border-[#1E3C40] text-[#EAE6DC]'
-            : 'bg-[#FAF8F3] border-[#E5DEC9] text-[#152B2E]'
+            : 'bg-[#F8FAFC] border-[#E2E8F0] text-[#152B2E]'
         }`}
       >
         <div className="max-w-4xl mx-auto space-y-4">
@@ -3358,9 +3361,9 @@ export default function App() {
               href="https://www.rokomari.com/book/9222/quraner-monajat-and-hamd"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-[#0F5B63] hover:bg-[#13707B] text-white border border-[#C59B27]/60 shadow-sm transition"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-[#0F5B63] hover:bg-[#13707B] text-white border border-[#14B8A6]/60 shadow-sm transition"
             >
-              <ShoppingBag size={15} className="text-[#E5C158]" />
+              <ShoppingBag size={15} className="text-[#2DD4BF]" />
               <span>
                 {lang === 'bn'
                   ? 'রকমারি থেকে অর্ডার করুন'
@@ -3385,13 +3388,13 @@ export default function App() {
         <div
           className={`fixed bottom-0 inset-x-0 z-50 border-t backdrop-blur-lg shadow-2xl transition-colors ${
             darkMode
-              ? 'bg-[#0D1C1E]/95 border-[#C59B27]/50 text-[#EAE6DC]'
-              : 'bg-[#FFFFFF]/95 border-[#C59B27]/60 text-[#152B2E]'
+              ? 'bg-[#0D1C1E]/95 border-[#14B8A6]/50 text-[#EAE6DC]'
+              : 'bg-[#FFFFFF]/95 border-[#14B8A6]/60 text-[#152B2E]'
           }`}
         >
           {/* Interactive Progress Scrub Bar */}
           <div
-            className="w-full h-1.5 bg-[#C59B27]/20 cursor-pointer relative"
+            className="w-full h-1.5 bg-[#14B8A6]/20 cursor-pointer relative"
             onClick={(e) => {
               if (!audioRef.current || !audioDuration) return;
               const rect = e.currentTarget.getBoundingClientRect();
@@ -3400,7 +3403,7 @@ export default function App() {
             }}
           >
             <div
-              className="h-full bg-gradient-to-r from-[#0F5B63] to-[#C59B27] transition-all duration-150"
+              className="h-full bg-gradient-to-r from-[#0F5B63] to-[#14B8A6] transition-all duration-150"
               style={{
                 width: `${audioDuration ? (audioProgress / audioDuration) * 100 : 0}%`
               }}
@@ -3417,10 +3420,10 @@ export default function App() {
             {/* Currently Playing Info */}
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2">
-                <span className="font-bn-serif font-bold text-sm sm:text-base truncate text-[#0F5B63] dark:text-[#F2D16B]">
+                <span className="font-bn-serif font-bold text-sm sm:text-base truncate text-[#0F5B63] dark:text-[#5EEAD4]">
                   {currentEntry.labelBn}
                 </span>
-                <span className="text-xs px-2 py-0.5 rounded-full bg-[#C59B27]/20 text-[#9A7414] dark:text-[#E5C158] font-bn-sans shrink-0">
+                <span className="text-xs px-2 py-0.5 rounded-full bg-[#14B8A6]/20 text-[#0F766E] dark:text-[#2DD4BF] font-bn-sans shrink-0">
                   {currentEntry.surahBn}
                   {currentEntry.ayahs.length > 1 &&
                     ` (${currentAyahIdx + 1}/${currentEntry.ayahs.length})`}
@@ -3435,7 +3438,7 @@ export default function App() {
             <div className="flex items-center gap-2 sm:gap-4">
               <button
                 onClick={handlePrevEntry}
-                className="p-2 rounded-full hover:bg-[#C59B27]/15 transition"
+                className="p-2 rounded-full hover:bg-[#14B8A6]/15 transition"
                 title="Previous"
               >
                 <SkipBack size={18} />
@@ -3443,7 +3446,7 @@ export default function App() {
 
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
-                className="w-11 h-11 rounded-full bg-[#0F5B63] hover:bg-[#13707B] text-white flex items-center justify-center shadow-md border border-[#C59B27] transition cursor-pointer"
+                className="w-11 h-11 rounded-full bg-[#0F5B63] hover:bg-[#13707B] text-white flex items-center justify-center shadow-md border border-[#14B8A6] transition cursor-pointer"
                 title={isPlaying ? 'Pause' : 'Play'}
               >
                 {isPlaying ? (
@@ -3455,7 +3458,7 @@ export default function App() {
 
               <button
                 onClick={handleNextEntry}
-                className="p-2 rounded-full hover:bg-[#C59B27]/15 transition"
+                className="p-2 rounded-full hover:bg-[#14B8A6]/15 transition"
                 title="Next"
               >
                 <SkipForward size={18} />
@@ -3469,8 +3472,8 @@ export default function App() {
                 onClick={cycleRepeatMode}
                 className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold border flex items-center gap-1 transition ${
                   repeatMode !== 'none'
-                    ? 'bg-[#C59B27] text-[#0B1718] border-[#C59B27]'
-                    : 'border-[#C59B27]/30 opacity-75 hover:opacity-100'
+                    ? 'bg-[#14B8A6] text-[#0B1718] border-[#14B8A6]'
+                    : 'border-[#14B8A6]/30 opacity-75 hover:opacity-100'
                 }`}
                 title="Toggle Loop Mode (Off / 3x / Infinite)"
               >
@@ -3490,7 +3493,7 @@ export default function App() {
                 className={`px-2.5 py-1.5 rounded-lg text-xs font-bn-sans font-semibold border transition ${
                   continuousMode
                     ? 'bg-[#0F5B63] text-white border-[#0F5B63]'
-                    : 'border-[#C59B27]/30 opacity-75'
+                    : 'border-[#14B8A6]/30 opacity-75'
                 }`}
                 title="Auto-advance to next prayer in chapter"
               >
@@ -3500,7 +3503,7 @@ export default function App() {
               {/* Mute */}
               <button
                 onClick={() => setIsMuted(!isMuted)}
-                className="p-2 rounded-lg hover:bg-[#C59B27]/15"
+                className="p-2 rounded-lg hover:bg-[#14B8A6]/15"
                 title={isMuted ? 'Unmute' : 'Mute'}
               >
                 {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
