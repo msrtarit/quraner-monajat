@@ -1,5 +1,6 @@
 ﻿import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import {
+  Languages,
   Play, Pause, SkipBack, SkipForward, Repeat, Volume2, VolumeX,
   BookOpen, Sparkles, Heart, Search, Moon, Sun, Settings, Check,
   Bookmark, RotateCcw, ChevronRight, ChevronDown, Info, Download,
@@ -50,47 +51,57 @@ const CHAPTERS = [
   {
     id: 'intro',
     number: '০',
+    numberEn: '0',
     titleBn: 'ভূমিকা ও উচ্চারণ নির্দেশিকা',
     titleEn: 'Preface & Pronunciation Guide',
     subtitleBn: 'সংকলক: এস. এম. জাকির হুসাইন',
     subtitleEn: 'Compiler: S.M. Zakir Hussain',
-    countLabel: 'নির্দেশিকা'
+    countLabel: 'নির্দেশিকা',
+    countLabelEn: 'Guide'
   },
   {
     id: 'monajat',
     number: '১',
+    numberEn: '1',
     titleBn: 'আল-কোরআনের ২৭টি মোনাজাত',
     titleEn: '27 Quranic Supplications (Monajat)',
     subtitleBn: 'রোগ-মুক্তি, বিপদমুক্তি, সমৃদ্ধি ও পরকালের মুক্তির কবুল হওয়া দোয়া (পৃষ্ঠা ১–৬৩)',
     subtitleEn: '27 Divine Prayers for Healing, Relief, Prosperity & Salvation',
-    countLabel: '২৭টি প্রার্থনা'
+    countLabel: '২৭টি প্রার্থনা',
+    countLabelEn: '27 Prayers'
   },
   {
     id: 'hamd',
     number: '২',
+    numberEn: '2',
     titleBn: 'হাম্দ — আল্লাহর প্রশংসা',
     titleEn: 'Hamd — Praises of Allah',
     subtitleBn: 'ঈমান, সুস্বাস্থ্য, সমৃদ্ধি ও অন্তরে প্রশান্তি লাভের শ্রেষ্ঠ আমল (পৃষ্ঠা ৬৫–৯২)',
     subtitleEn: '23 Quranic Verses Glorifying & Praising Allah',
-    countLabel: '২৩টি হাম্দ'
+    countLabel: '২৩টি হাম্দ',
+    countLabelEn: '23 Praises'
   },
   {
     id: 'amal',
     number: '৩',
+    numberEn: '3',
     titleBn: "কিছু গুরুত্বপূর্ণ 'আমল",
     titleEn: "Important Spiritual 'Amals",
     subtitleBn: 'আত্মশুদ্ধি, নফস দমন ও হৃদয়ের প্রশান্তির আয়াতসমূহ (পৃষ্ঠা ৯৩–১০৮)',
     subtitleEn: '13 Key Verses for Self-Purification & Heart Tranquility',
-    countLabel: '১৩টি আমল'
+    countLabel: '১৩টি আমল',
+    countLabelEn: "13 'Amals"
   },
   {
     id: 'iman_amal',
     number: '৪',
+    numberEn: '4',
     titleBn: "ঈমান বৃদ্ধির ১১টি বিশেষ 'আমল",
     titleEn: "11 Special 'Amals for Increasing Faith",
     subtitleBn: 'ঈমান দৃঢ় করার ক্রমিক ১১টি বিশেষ আয়াত ও সিজদাহ (পৃষ্ঠা ১০৯–১১৫)',
     subtitleEn: '11 Numbered Verses for Strengthening Iman (Including Sajdah Verses)',
-    countLabel: '১১টি বিশেষ আমল'
+    countLabel: '১১টি বিশেষ আমল',
+    countLabelEn: "11 Special 'Amals"
   }
 ];
 
@@ -1562,6 +1573,24 @@ const toBnDigits = (num) => {
 export default function App() {
   // Navigation & UI state
   const [activeChapter, setActiveChapter] = useState('monajat');
+  const [lang, setLang] = useState(() => {
+    try {
+      return localStorage.getItem('qmh_lang') || 'bn';
+    } catch {
+      return 'bn';
+    }
+  });
+
+  const toggleLang = () => {
+    setLang((prev) => {
+      const next = prev === 'bn' ? 'en' : 'bn';
+      try {
+        localStorage.setItem('qmh_lang', next);
+      } catch {}
+      return next;
+    });
+  };
+
   const [darkMode, setDarkMode] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -1962,17 +1991,29 @@ export default function App() {
               </div>
               <div>
                 <h1 className="font-bn-serif font-bold text-lg sm:text-xl leading-tight tracking-tight text-[#0F5B63] dark:text-[#E5C158]">
-                  কোরআনের মোনাজাত এবং হাম্দ
+                  {lang === 'bn' ? 'কোরআনের মোনাজাত এবং হাম্দ' : 'Quraner Monajat & Hamd'}
                 </h1>
                 <p className="text-xs font-bn-sans opacity-75 hidden sm:block">
-                  সংকলন: এস. এম. জাকির হুসাইন • Interactive Reader & Audio Companion
+                  {lang === 'bn'
+                    ? 'সংকলন: এস. এম. জাকির হুসাইন • Interactive Reader & Audio Companion'
+                    : 'Compiled by S.M. Zakir Hussain • Interactive Reader & Audio Companion'}
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Right Controls: Reciter Dropdown, Typography Settings, Dark Mode */}
+          {/* Right Controls: Language Switch, Reciter Dropdown, Typography Settings, Dark Mode */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* English / Bangla Language Toggle Button */}
+            <button
+              onClick={toggleLang}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#C59B27] bg-[#0F5B63]/10 dark:bg-[#C59B27]/15 hover:bg-[#0F5B63]/20 dark:hover:bg-[#C59B27]/25 transition font-semibold text-xs text-[#0F5B63] dark:text-[#F2D16B] shadow-sm cursor-pointer"
+              title={lang === 'bn' ? 'Switch to English version' : 'বাংলা সংস্করণে পরিবর্তন করুন'}
+            >
+              <Languages size={15} className="text-[#C59B27]" />
+              <span className="font-bold">{lang === 'bn' ? 'English' : 'বাংলা'}</span>
+            </button>
+
             {/* Reciter Selector */}
             <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[#C59B27]/40 bg-[#0F5B63]/5 dark:bg-[#122528]">
               <Volume2 size={16} className="text-[#C59B27] shrink-0" />
@@ -2144,9 +2185,11 @@ export default function App() {
           >
             <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#C59B27]/30">
               <span className="font-bn-serif font-bold text-sm uppercase tracking-wider text-[#C59B27]">
-                সূচিপত্র • Chapters
+                {lang === 'bn' ? 'সূচিপত্র • Chapters' : 'Index • Chapters'}
               </span>
-              <span className="text-xs opacity-70 font-bn-sans">৯৬টি আয়াত</span>
+              <span className="text-xs opacity-70 font-bn-sans">
+                {lang === 'bn' ? '৯৬টি আয়াত' : '96 Verses'}
+              </span>
             </div>
 
             <nav className="space-y-2">
@@ -2176,18 +2219,18 @@ export default function App() {
                           : 'bg-[#0F5B63]/10 text-[#0F5B63] dark:bg-[#C59B27]/20 dark:text-[#E5C158]'
                       }`}
                     >
-                      {chap.number}
+                      {lang === 'bn' ? chap.number : chap.numberEn}
                     </span>
                     <div className="min-w-0 flex-1">
                       <div className="font-bn-serif font-bold text-sm leading-snug">
-                        {chap.titleBn}
+                        {lang === 'bn' ? chap.titleBn : chap.titleEn}
                       </div>
                       <div
                         className={`text-[11px] mt-0.5 truncate ${
                           isActive ? 'text-[#E5DEC9]' : 'opacity-70'
                         }`}
                       >
-                        {chap.titleEn}
+                        {lang === 'bn' ? chap.titleEn : chap.titleBn}
                       </div>
                       <span
                         className={`inline-block mt-1.5 text-[10px] px-2 py-0.5 rounded-full font-bn-sans ${
@@ -2196,7 +2239,7 @@ export default function App() {
                             : 'bg-[#C59B27]/15 text-[#9A7414] dark:text-[#E5C158]'
                         }`}
                       >
-                        {chap.countLabel}
+                        {lang === 'bn' ? chap.countLabel : chap.countLabelEn}
                       </span>
                     </div>
                   </button>
@@ -2207,18 +2250,17 @@ export default function App() {
             {/* Quick Stats / Tasbih Summary */}
             <div className="mt-5 pt-4 border-t border-[#C59B27]/30 space-y-2.5">
               <div className="flex items-center justify-between text-xs font-bn-sans">
-                <span className="opacity-75">সংরক্ষিত দোয়া (Bookmarks):</span>
+                <span className="opacity-75">{lang === 'bn' ? 'সংরক্ষিত দোয়া (Bookmarks):' : 'Saved Bookmarks:'}</span>
                 <span className="font-bold text-[#0F5B63] dark:text-[#E5C158]">
-                  {toBnDigits(favorites.length)} টি
+                  {lang === 'bn' ? `${toBnDigits(favorites.length)} টি` : `${favorites.length} items`}
                 </span>
               </div>
               <div className="flex items-center justify-between text-xs font-bn-sans">
-                <span className="opacity-75">মোট তিলাওয়াত (Recitations):</span>
+                <span className="opacity-75">{lang === 'bn' ? 'মোট তিলাওয়াত (Recitations):' : 'Total Recitations:'}</span>
                 <span className="font-bold text-[#0F5B63] dark:text-[#E5C158]">
-                  {toBnDigits(
-                    Object.values(tasbihCounts).reduce((acc, v) => acc + v, 0)
-                  )}{' '}
-                  বার
+                  {lang === 'bn'
+                    ? `${toBnDigits(Object.values(tasbihCounts).reduce((acc, v) => acc + v, 0))} বার`
+                    : `${Object.values(tasbihCounts).reduce((acc, v) => acc + v, 0)} times`}
                 </span>
               </div>
             </div>
@@ -2239,16 +2281,20 @@ export default function App() {
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bn-sans font-semibold bg-[#C59B27]/15 text-[#9A7414] dark:text-[#E5C158] border border-[#C59B27]/30 mb-2">
                   <Sparkles size={13} />
-                  <span>পর্ব {currentChapterObj?.number} • {currentChapterObj?.countLabel}</span>
+                  <span>
+                    {lang === 'bn'
+                      ? `পর্ব ${currentChapterObj?.number} • ${currentChapterObj?.countLabel}`
+                      : `Chapter ${currentChapterObj?.numberEn} • ${currentChapterObj?.countLabelEn}`}
+                  </span>
                 </div>
                 <h2 className="font-bn-serif font-bold text-2xl sm:text-3xl text-[#0F5B63] dark:text-[#F2D16B]">
-                  {currentChapterObj?.titleBn}
+                  {lang === 'bn' ? currentChapterObj?.titleBn : currentChapterObj?.titleEn}
                 </h2>
                 <p className="font-en-serif italic text-sm opacity-80 mt-0.5">
-                  {currentChapterObj?.titleEn}
+                  {lang === 'bn' ? currentChapterObj?.titleEn : currentChapterObj?.titleBn}
                 </p>
                 <p className="font-bn-sans text-sm opacity-85 mt-2 max-w-2xl">
-                  {currentChapterObj?.subtitleBn}
+                  {lang === 'bn' ? currentChapterObj?.subtitleBn : currentChapterObj?.subtitleEn}
                 </p>
               </div>
 
@@ -2259,7 +2305,7 @@ export default function App() {
                     className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0F5B63] hover:bg-[#13707B] text-white font-bn-sans font-semibold text-sm shadow-md border border-[#C59B27]/50 transition cursor-pointer"
                   >
                     <ListMusic size={18} className="text-[#E5C158]" />
-                    <span>সম্পূর্ণ পর্ব শুনুন (Play All)</span>
+                    <span>{lang === 'bn' ? 'সম্পূর্ণ পর্ব শুনুন (Play All)' : 'Play Full Chapter'}</span>
                   </button>
                 </div>
               )}
@@ -2288,23 +2334,42 @@ export default function App() {
                 <p className="font-arabic text-xl text-center py-3 text-[#0F5B63] dark:text-[#E5C158]">
                   بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
                 </p>
-                <div className="space-y-3 font-bn-sans text-base leading-relaxed opacity-90">
-                  <p>
-                    শুধু প্রার্থনা করলেই চলে না, তার আগে <strong>তওবা</strong> এবং পরে{' '}
-                    <strong>আল্লাহর প্রশংসা (হামদ)</strong> না করলে এবং{' '}
-                    <strong>রাসূল (সা.)-এর কাছে দরূদ</strong> না পাঠালে তা কবুল হয় না। তাছাড়া
-                    হালাল রুজি, ধৈর্য ও জবান-নিয়ন্ত্রণ এসবের ব্যাপার তো আছেই।
-                  </p>
-                  <p>
-                    এ কারণে এই বইতে কোরআন থেকে এমন আয়াতগুলো সংকলন করা হয়েছে যেগুলিতে
-                    আল্লাহ পাক নিজেই নিজের প্রশংসা করেছেন এবং যে ভাষায় তিনি আমাদের প্রার্থনা
-                    করতে শিখিয়েছেন। আল্লাহর শেখানো ভাষাতে তাঁর কাছে প্রার্থনা করলে এবং তাঁর
-                    শেখানো ভাষাতে প্রশংসা করলে তিনি সবচেয়ে বেশি খুশি হন।
-                  </p>
-                  <p className="text-sm italic opacity-75 pt-2 border-t border-[#C59B27]/20">
-                    — বিনীত, এস. এম. জাকির হুসাইন (ফেব্রুয়ারি ২০০২, ঢাকা)
-                  </p>
-                </div>
+                {lang === 'bn' ? (
+                  <div className="space-y-3 font-bn-sans text-base leading-relaxed opacity-90">
+                    <p>
+                      শুধু প্রার্থনা করলেই চলে না, তার আগে <strong>তওবা</strong> এবং পরে{' '}
+                      <strong>আল্লাহর প্রশংসা (হামদ)</strong> না করলে এবং{' '}
+                      <strong>রাসূল (সা.)-এর কাছে দরূদ</strong> না পাঠালে তা কবুল হয় না। তাছাড়া
+                      হালাল রুজি, ধৈর্য ও জবান-নিয়ন্ত্রণ এসবের ব্যাপার তো আছেই।
+                    </p>
+                    <p>
+                      এ কারণে এই বইতে কোরআন থেকে এমন আয়াতগুলো সংকলন করা হয়েছে যেগুলিতে
+                      আল্লাহ পাক নিজেই নিজের প্রশংসা করেছেন এবং যে ভাষায় তিনি আমাদের প্রার্থনা
+                      করতে শিখিয়েছেন। আল্লাহর শেখানো ভাষাতে তাঁর কাছে প্রার্থনা করলে এবং তাঁর
+                      শেখানো ভাষাতে প্রশংসা করলে তিনি সবচেয়ে বেশি খুশি হন।
+                    </p>
+                    <p className="text-sm italic opacity-75 pt-2 border-t border-[#C59B27]/20">
+                      — বিনীত, এস. এম. জাকির হুসাইন (ফেব্রুয়ারি ২০০২, ঢাকা)
+                    </p>
+                  </div>
+                ) : (
+                  <div className="space-y-3 font-en-serif text-base leading-relaxed opacity-90">
+                    <p>
+                      Mere petitioning is not enough. Without preceding repentance (<strong>Tawbah</strong>),
+                      subsequent praise of Allah (<strong>Hamd</strong>), and blessings upon the
+                      Messenger (peace be upon him) (<strong>Durood</strong>), supplications remain incomplete.
+                      Sincerity, lawful sustenance (Halal livelihood), patience, and guarding the tongue are equally vital.
+                    </p>
+                    <p>
+                      Therefore, this book compiles the selected Quranic verses wherein Allah the Almighty
+                      praises Himself and instructs us in the very words to supplicate unto Him. Praying and praising
+                      Allah in the words He Himself revealed is the most beloved to Him.
+                    </p>
+                    <p className="text-sm italic opacity-75 pt-2 border-t border-[#C59B27]/20">
+                      — S. M. Zakir Hussain (February 2002, Dhaka)
+                    </p>
+                  </div>
+                )}
               </section>
 
               {/* Golden Etiquette of Supplication */}
@@ -2316,7 +2381,7 @@ export default function App() {
                 }`}
               >
                 <h3 className="font-bn-serif font-bold text-lg text-[#0F5B63] dark:text-[#E5C158] mb-4">
-                  দোয়া কবুলের ধারাবাহিক আদব (Recommended Sequence)
+                  {lang === 'bn' ? 'দোয়া কবুলের ধারাবাহিক আদব (Recommended Sequence)' : 'Recommended Sequence of Supplication'}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                   {[
@@ -2406,7 +2471,11 @@ export default function App() {
                       type="text"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      placeholder="সূরার নাম, অর্থ বা ফজিলত খুঁজুন (যেমন: বাকারাহ, ক্ষমা, ধৈর্য, সন্তান, শান্তি)..."
+                      placeholder={
+                        lang === 'bn'
+                          ? 'সূরার নাম, অর্থ বা ফজিলত খুঁজুন (যেমন: বাকারাহ, ক্ষমা, ধৈর্য, সন্তান, শান্তি)...'
+                          : 'Search by surah name, meaning, or topic (e.g. Baqarah, forgiveness, patience)...'
+                      }
                       className={`w-full pl-10 pr-4 py-2 rounded-xl text-sm font-bn-sans border focus:outline-none focus:border-[#C59B27] ${
                         darkMode
                           ? 'bg-[#0B1718] border-[#1E3C40] text-white'
@@ -2425,7 +2494,11 @@ export default function App() {
                     }`}
                   >
                     <Bookmark size={15} fill={onlyFavorites ? 'currentColor' : 'none'} />
-                    <span>সংরক্ষিত ({toBnDigits(favorites.length)})</span>
+                    <span>
+                      {lang === 'bn'
+                        ? `সংরক্ষিত (${toBnDigits(favorites.length)})`
+                        : `Saved (${favorites.length})`}
+                    </span>
                   </button>
                 </div>
 
@@ -2441,7 +2514,7 @@ export default function App() {
                           : 'border-[#C59B27]/30 opacity-80 hover:opacity-100'
                       }`}
                     >
-                      {goal.labelBn}
+                      {lang === 'bn' ? goal.labelBn : goal.labelEn}
                     </button>
                   ))}
                 </div>
@@ -2457,7 +2530,9 @@ export default function App() {
                   }`}
                 >
                   <p className="font-bn-serif text-lg opacity-75">
-                    এই ফিল্টারে কোনো আয়াত পাওয়া যায়নি।
+                    {lang === 'bn'
+                      ? 'এই ফিল্টারে কোনো আয়াত পাওয়া যায়নি।'
+                      : 'No verses found matching this criteria.'}
                   </p>
                   <button
                     onClick={() => {
@@ -2465,9 +2540,9 @@ export default function App() {
                       setSelectedGoal('ALL');
                       setOnlyFavorites(false);
                     }}
-                    className="mt-3 px-4 py-2 rounded-xl text-xs font-semibold bg-[#0F5B63] text-white"
+                    className="mt-3 px-4 py-2 rounded-xl text-xs font-semibold bg-[#0F5B63] text-white cursor-pointer"
                   >
-                    সব আয়াত দেখুন (Reset Filters)
+                    {lang === 'bn' ? 'সব আয়াত দেখুন (Reset Filters)' : 'View All Verses (Reset Filters)'}
                   </button>
                 </div>
               ) : (
@@ -2521,19 +2596,21 @@ export default function App() {
                             <div>
                               <div className="flex items-center gap-2 flex-wrap">
                                 <span className="font-bn-serif font-bold text-base sm:text-lg text-[#0F5B63] dark:text-[#F2D16B]">
-                                  {entry.labelBn}
+                                  {lang === 'bn' ? entry.labelBn : entry.labelEn}
                                 </span>
                                 <span className="text-xs px-2.5 py-0.5 rounded-full font-bn-sans font-medium bg-[#0F5B63]/10 text-[#0F5B63] dark:bg-[#C59B27]/20 dark:text-[#E5C158]">
-                                  {entry.surahBn}
+                                  {lang === 'bn' ? entry.surahBn : entry.surahEn}
                                 </span>
                                 {entry.isSajdah && (
                                   <span className="text-xs px-2.5 py-0.5 rounded-full font-bn-sans font-semibold bg-amber-500/20 text-amber-700 dark:text-amber-300 border border-amber-500/40">
-                                    ۩ আয়াতে সিজদাহ
+                                    {lang === 'bn' ? '۩ আয়াতে সিজদাহ' : '۩ Sajdah Verse'}
                                   </span>
                                 )}
                               </div>
                               <div className="text-xs opacity-70 font-en-serif">
-                                {entry.labelEn} • {entry.surahEn} • পৃষ্ঠা {entry.page}
+                                {lang === 'bn'
+                                  ? `${entry.labelEn} • ${entry.surahEn} • পৃষ্ঠা ${entry.page}`
+                                  : `${entry.labelBn} • ${entry.surahBn} • Page ${entry.page}`}
                               </div>
                             </div>
                           </div>
@@ -2553,8 +2630,8 @@ export default function App() {
                                 className="px-2.5 py-1.5 font-bn-sans font-semibold hover:bg-[#0F5B63]/10 flex items-center gap-1 transition cursor-pointer"
                                 title="Click to count recitation (Tasbih)"
                               >
-                                <span className="text-[#0F5B63] dark:text-[#E5C158]">পাঠ:</span>
-                                <span className="font-bold">{toBnDigits(count)}×</span>
+                                <span className="text-[#0F5B63] dark:text-[#E5C158]">{lang === 'bn' ? 'পাঠ:' : 'Count:'}</span>
+                                <span className="font-bold">{lang === 'bn' ? `${toBnDigits(count)}×` : `${count}×`}</span>
                               </button>
                               {count > 0 && (
                                 <button
@@ -2829,7 +2906,7 @@ export default function App() {
                 }`}
                 title="Auto-advance to next prayer in chapter"
               >
-                Auto-Next: {continuousMode ? 'ON' : 'OFF'}
+                {lang === 'bn' ? 'পরবর্তী আয়াত:' : 'Auto-Next:'} {continuousMode ? 'ON' : 'OFF'}
               </button>
 
               {/* Mute */}
