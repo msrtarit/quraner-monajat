@@ -4,7 +4,7 @@ import {
   Play, Pause, SkipBack, SkipForward, Repeat, Volume2, VolumeX,
   BookOpen, Sparkles, Heart, Search, Moon, Sun, Settings, Check,
   Bookmark, RotateCcw, ChevronRight, ChevronDown, Info, Download,
-  Compass, Shield, Award, ListMusic, Menu, X, ExternalLink, Copy
+  Compass, Shield, Award, ListMusic, Menu, X, ExternalLink, Copy, ShoppingBag
 } from 'lucide-react';
 
 /**
@@ -2847,6 +2847,18 @@ export default function App() {
                     <p className="text-sm italic opacity-75 pt-2 border-t border-[#C59B27]/20">
                       — বিনীত, এস. এম. জাকির হুসাইন (ফেব্রুয়ারি ২০০২, ঢাকা)
                     </p>
+                    <div className="pt-3">
+                      <a
+                        href="https://www.rokomari.com/book/9222/quraner-monajat-and-hamd"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-[#C59B27] hover:bg-[#B38A1F] text-[#0B1718] transition shadow-sm"
+                      >
+                        <ShoppingBag size={14} />
+                        <span>মূল বইটি রকমারি থেকে সংগ্রহ করুন (Order on Rokomari)</span>
+                        <ExternalLink size={12} />
+                      </a>
+                    </div>
                   </div>
                 ) : (
                   <div className="space-y-3 font-en-serif text-base leading-relaxed opacity-90">
@@ -2864,6 +2876,18 @@ export default function App() {
                     <p className="text-sm italic opacity-75 pt-2 border-t border-[#C59B27]/20">
                       — S. M. Zakir Hussain (February 2002, Dhaka)
                     </p>
+                    <div className="pt-3 font-sans">
+                      <a
+                        href="https://www.rokomari.com/book/9222/quraner-monajat-and-hamd"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-[#C59B27] hover:bg-[#B38A1F] text-[#0B1718] transition shadow-sm"
+                      >
+                        <ShoppingBag size={14} />
+                        <span>Order Original Physical Book on Rokomari</span>
+                        <ExternalLink size={12} />
+                      </a>
+                    </div>
                   </div>
                 )}
               </section>
@@ -3306,6 +3330,49 @@ export default function App() {
           )}
         </main>
       </div>
+
+      {/* =====================================================================
+          FOOTER WITH PHYSICAL BOOK ORDER LINK
+      ===================================================================== */}
+      <footer
+        className={`border-t py-8 px-4 text-center transition-colors ${
+          currentEntry ? 'pb-28 sm:pb-24' : 'pb-12'
+        } ${
+          darkMode
+            ? 'bg-[#0B1718] border-[#1E3C40] text-[#EAE6DC]'
+            : 'bg-[#FAF8F3] border-[#E5DEC9] text-[#152B2E]'
+        }`}
+      >
+        <div className="max-w-4xl mx-auto space-y-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <span className="text-sm font-medium opacity-90">
+              {lang === 'bn'
+                ? 'এস. এম. জাকির হুসাইন সংকলিত মূল মুদ্রিত বইটি সংগ্রহ করতে চান?'
+                : 'Looking to purchase the original physical book by S.M. Zakir Hussain?'}
+            </span>
+            <a
+              href="https://www.rokomari.com/book/9222/quraner-monajat-and-hamd"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-[#0F5B63] hover:bg-[#13707B] text-white border border-[#C59B27]/60 shadow-sm transition"
+            >
+              <ShoppingBag size={15} className="text-[#E5C158]" />
+              <span>
+                {lang === 'bn'
+                  ? 'রকমারি থেকে অর্ডার করুন'
+                  : 'Order on Rokomari'}
+              </span>
+              <ExternalLink size={13} className="opacity-80" />
+            </a>
+          </div>
+
+          <p className="text-xs opacity-60">
+            {lang === 'bn'
+              ? 'কোরআনের মোনাজাত এবং হাম্দ • অলাভজনক ইসলামিক শিক্ষার উদ্দেশ্যে উন্মুক্ত'
+              : 'Quraner Monajat & Hamd • Open educational resource for spiritual reflection'}
+          </p>
+        </div>
+      </footer>
 
       {/* =====================================================================
           STICKY BOTTOM AUDIO PLAYER BAR

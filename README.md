@@ -1,7 +1,8 @@
 # Quraner Monajat & Hamd (কোরআনের মোনাজাত এবং হাম্দ)
 
 > **Compiler:** S. M. Zakir Hussain  
-> **Live Web Application:** [https://qraner-monajat.vercel.app/](https://qraner-monajat.vercel.app/)
+> **Live Web Application:** [https://qraner-monajat.vercel.app/](https://qraner-monajat.vercel.app/)  
+> **Original Book (Rokomari):** [Order Physical Book on Rokomari](https://www.rokomari.com/book/9222/quraner-monajat-and-hamd)
 
 A modern, interactive, and beautifully designed web application featuring all Quranic prayers, supplications (Monajat), and praises (Hamd). Designed for deep reflection and learning, featuring complete Arabic Uthmani script with Tashkeel, Bengali translation, English translation, spiritual virtues (fazilat), and high-fidelity audio recitations.
 
@@ -74,6 +75,13 @@ npm run preview
 ## 🌐 Live Demo
 
 Experience the live app here: **[qraner-monajat.vercel.app](https://qraner-monajat.vercel.app/)**
+
+---
+
+## 📚 Physical Book
+
+To purchase the original published Bengali book **"কোরআনের মোনাজাত এবং হাম্দ"** compiled by **S.M. Zakir Hussain**, order it directly from Rokomari:
+👉 **[Order on Rokomari (রকমারি)](https://www.rokomari.com/book/9222/quraner-monajat-and-hamd)**
 
 ---
 
