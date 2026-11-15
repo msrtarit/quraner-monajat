@@ -3262,7 +3262,7 @@ export default function App() {
                           {visibleLayers.bengali && (
                             <div
                               style={{ fontSize: `${bengaliSize}px` }}
-                              className="font-bn-serif leading-relaxed text-[#111827] dark:text-[#EAE6DC]"
+                              className="font-bn-sans leading-relaxed text-[#111827] dark:text-[#EAE6DC]"
                             >
                               <span className="text-xs font-bn-sans font-bold uppercase tracking-wider text-[#0F766E] dark:text-[#2DD4BF] block mb-1">
                                 বাংলা অনুবাদ:
