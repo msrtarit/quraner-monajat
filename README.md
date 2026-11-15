@@ -1,73 +1,82 @@
-# কোরআনের মোনাজাত এবং হাম্দ (Quraner Monajat & Hamd)
+# Quraner Monajat & Hamd (কোরআনের মোনাজাত এবং হাম্দ)
 
-> **সংকলন:** এস. এম. জাকির হুসাইন (Compiled by S.M. Zakir Hussain)  
-> **লাইভ ওয়েবসাইট:** [https://qraner-monajat.vercel.app/](https://qraner-monajat.vercel.app/)
+> **Compiler:** S. M. Zakir Hussain  
+> **Live Web Application:** [https://qraner-monajat.vercel.app/](https://qraner-monajat.vercel.app/)
 
-একটি আধুনিক, মনোমুগ্ধকর ও ইন্টারঅ্যাক্টিভ ওয়েব অ্যাপ্লিকেশন—যেখানে পবিত্র কুরআনের নির্বাচিত সমস্ত মোনাজাত ও হাম্দ আরবি হরকতসহ তিলাওয়াত, বাংলা অনুবাদ, ইংরেজি অনুবাদ এবং ফজিলত/প্রেক্ষাপটসহ সাজানো হয়েছে।
-
----
-
-## 🌟 প্রধান বৈশিষ্ট্যসমূহ (Key Features)
-
-- 📖 **সম্পূর্ণ সংকলন:** এস. এম. জাকির হুসাইন সংকলিত "কোরআনের মোনাজাত এবং হাম্দ" বইয়ের সকল রুকূ ও আয়াত ক্যাটাগরিভিত্তিক সন্নিবেশিত।
-- 🎙️ **বিশ্ববিখ্যাত ৫ ক্বারীর অডিও তিলাওয়াত:**
-  - ক্বারী আব্দুল বাসিত (মুরাত্তাল)
-  - ক্বারী আব্দুল বাসিত (মুজাওয়াদ)
-  - মিশারি রশিদ আল-আফাসি
-  - মাহমুদ খলিল আল-হুসারি
-  - মুহাম্মদ সিদ্দিক আল-মিনশাবি
-- 🔁 **অডিও কন্ট্রোল:** আয়াতভিত্তিক রিপিট (Repeat/Loop), অটো-প্লে ও নেক্সট ট্র্যাক সুবিধা।
-- 🎨 **ইসলামিক টিল (Teal) ও গোল্ড ডিজাইন:** চোখের আরামদায়ক আধুনিক ইসলামিক টিল প্যালেট ও পার্চমেন্ট পেপার ফিল।
-- 🌙 **তাহাজ্জুদ / নাইট মোড:** রাতের বেলা পড়ার জন্য ডার্ক মোড এবং দিনের জন্য পার্চমেন্ট মোড।
-- 🔍 **স্মার্ট সার্চ ও ফিল্টার:** বাংলা, আরবি বা বিষয়ভিত্তিক (যেমন: ক্ষমা, রিজিক, মা-বাবা, বিপদমুক্তি ইত্যাদি) অনুসন্ধান।
-- 📑 **বুকমার্ক ও ফেভারিট:** প্রয়োজনীয় মোনাজাতগুলো সংরক্ষণ করে রাখা।
-- ⚙️ **কাস্টমাইজেবল ডিসপ্লে:** ফন্ট সাইজ বাড়ানো/কমানো এবং প্রয়োজন অনুযায়ী আরবি, বাংলা বা ইংরেজি স্তর অন/অফ করার সুবিধা।
+A modern, interactive, and beautifully designed web application featuring all Quranic prayers, supplications (Monajat), and praises (Hamd). Designed for deep reflection and learning, featuring complete Arabic Uthmani script with Tashkeel, Bengali translation, English translation, spiritual virtues (fazilat), and high-fidelity audio recitations.
 
 ---
 
-## 🛠️ ব্যবহৃত প্রযুক্তি (Tech Stack)
+## 🌟 Key Features
 
-- **Frontend:** [React 19](https://react.dev/)
-- **Bundler:** [Vite](https://vite.dev/)
+- 📖 **Comprehensive Collection:** Every chapter and supplication from the celebrated book *"Quraner Monajat Ebong Hamd"* compiled by S.M. Zakir Hussain.
+- 🎙️ **5 Renowned Reciters (Qaris):**
+  - Qari Abdul Basit Abdul Samad (Murattal • 192 kbps)
+  - Qari Abdul Basit Abdul Samad (Mujawwad • 128 kbps)
+  - Mishary Rashid Alafasy (128 kbps)
+  - Mahmoud Khalil Al-Husary (Tajweed Standard • 128 kbps)
+  - Mohamed Siddiq El-Minshawi (Reverent • 128 kbps)
+- 🔁 **Advanced Audio Player:** Verse-by-verse looping/repeat, autoplay, playback rate control, and instant seek.
+- 🎨 **Islamic Teal & Gold Aesthetics:** Eye-comforting modern deep teal palette paired with parchment-style backgrounds and warm golden accents.
+- 🌙 **Tahajjud / Night Mode:** Seamless toggle between daytime parchment reading and an immersive dark mode for night reflections.
+- 🔍 **Instant Search & Goal-based Filtering:** Filter by themes (e.g., Forgiveness, Sustenance/Rizq, Parents, Protection, Guidance) or search keywords in Arabic, Bengali, and English.
+- 📑 **Bookmarks & Favorites:** Save specific supplications for daily Adhkar and quick access.
+- ⚙️ **Customizable Typography & Layers:** Independent font resizing and toggles for Arabic script, Bengali meaning, English translation, and context/virtue notes.
+- 📱 **Fully Responsive:** Smooth experience across mobile phones, tablets, and desktop displays.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend Framework:** [React 19](https://react.dev/)
+- **Build Tool:** [Vite](https://vite.dev/)
 - **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
 - **Icons:** [Lucide React](https://lucide.dev/)
-- **Typography:** Google Fonts (*Amiri Quran* এবং *Hind Siliguri*)
+- **Typography:** Google Fonts (*Amiri Quran* for Arabic & *Hind Siliguri* for Bengali)
+- **Audio CDN:** EveryAyah Streaming API
 - **Deployment:** [Vercel](https://vercel.com/)
-- **Audio CDN:** EveryAyah
 
 ---
 
-## 🚀 লোকাল সেটআপ (Local Setup & Development)
+## 🚀 Getting Started (Local Development)
+
+### Prerequisites
+Make sure you have Node.js (v18 or higher) installed on your machine.
+
+### Installation
 
 ```bash
-# ১. রিপোজিটরি ক্লোন করুন
+# 1. Clone the repository
 git clone https://github.com/msrtarit/quraner-monajat.git
 cd quraner-monajat
 
-# ২. ডিপেন্ডেন্সি ইনস্টল করুন
+# 2. Install dependencies
 npm install
 
-# ৩. লোকাল ডেভেলপমেন্ট সার্ভার চালু করুন
+# 3. Start local development server
 npm run dev
 ```
 
-ব্রাউজারে `http://localhost:5173` ওপেন করুন।
+Open your browser and navigate to `http://localhost:5173`.
 
-### প্রোডাকশন বিল্ড (Production Build)
+### Production Build
 
 ```bash
+# Build production-ready bundle
 npm run build
+
+# Preview the production build locally
 npm run preview
 ```
 
 ---
 
-## 🌐 লাইভ প্রিভিউ (Live Demo)
+## 🌐 Live Demo
 
-অ্যাপ্লিকেশনটি ভিজিট করতে ক্লিক করুন: **[qraner-monajat.vercel.app](https://qraner-monajat.vercel.app/)**
+Experience the live app here: **[qraner-monajat.vercel.app](https://qraner-monajat.vercel.app/)**
 
 ---
 
-## 📄 লাইসেন্স (License)
+## 📄 License
 
-ব্যক্তিগত ও অলাভজনক ইসলামিক শিক্ষার উদ্দেশ্যে উন্মুক্ত।
+This project is created for non-commercial educational and spiritual benefit. Dedicated to the public for Islamic learning.
