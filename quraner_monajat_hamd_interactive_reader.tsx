@@ -105,6 +105,502 @@ const CHAPTERS = [
   }
 ];
 
+
+// Comprehensive English translations for all spiritual benefits & notes
+const TRANSLATIONS_EN = {
+  "monajat-1": {
+    "benefitsEn": [
+      "Comprehensive worldly well-being (healing from illness, relief from poverty and hardship)",
+      "Fosters an Akhirah-oriented mindset, strengthening faith and bringing contentment with modest means",
+      "Salvation from the punishment of the Hellfire in the Hereafter"
+    ],
+    "noteEn": "Allah desires us to keep a humble eye on the Hereafter alongside this world. Because this supplication seeks the best of both realms together, its likelihood of acceptance is exceptionally high."
+  },
+  "monajat-2": {
+    "benefitsEn": [
+      "Bestows steadfast patience leading to healing, relief from poverty, and triumph over hardship",
+      "Deepens reliance upon Allah (Tawakkul) and fortifies noble moral character",
+      "Grants inner fortitude during severe trials of faith and brings closeness to Allah"
+    ],
+    "noteEn": "Patience cannot be attained without Allah’s aid. This prayer is indispensable both for endurance in distress and moderation in prosperity."
+  },
+  "monajat-3": {
+    "benefitsEn": [
+      "Forgiveness for sins committed out of ignorance or error, granting protection from their consequences",
+      "Brings deep tranquility to the heart and relieves agonizing guilt",
+      "Facilitates ease in daily domestic, social, and financial matters"
+    ]
+  },
+  "monajat-4": {
+    "benefitsEn": [
+      "Awakens deep consciousness of the Day of Judgment and restrains the base desires of the soul",
+      "Increases God-consciousness (Taqwa) and dispels worldly delusions",
+      "Enhances complete surrender to Allah, greatly increasing the acceptance of all supplications"
+    ],
+    "noteEn": "A heart-rending prayer invoking the awe and certainty of the Day of Judgment. It is recommended to recite this before making other supplications."
+  },
+  "monajat-5": {
+    "benefitsEn": [
+      "Bestows profound wisdom and perception of the mysteries of creation",
+      "Cultivates a grateful and praising heart through pondering Allah’s omnipotence and majesty",
+      "Shields from the torment of the Hellfire"
+    ],
+    "noteEn": "Pondering the heavens and the vast expanse of nature with awe, then supplicating with this prayer alongside Prayer 24, leads to profound divine knowledge."
+  },
+  "monajat-6": {
+    "benefitsEn": [
+      "Protection from humiliation, shame, and disgrace on the Day of Resurrection",
+      "Keeps one mindful of accountability before Allah and helps preserve righteous conduct",
+      "Brings salvation from the ultimate ruin of the wrongdoers"
+    ],
+    "noteEn": "Prayers 5, 6, 7, and 8 form a continuous, unified supplication revealed in the Quran; reciting them together yields great spiritual reward."
+  },
+  "monajat-7": {
+    "benefitsEn": [
+      "Forgiveness of major and minor sins and purification of evil deeds",
+      "Grants the blessing of dying in a state of righteousness alongside the noble believers",
+      "Directly answers the call of the Messenger of Allah (ﷺ) with resolute faith"
+    ],
+    "noteEn": "In this prayer, the believer bears witness to the truth of the Prophet’s (ﷺ) call and acknowledges true faith as the means of seeking divine forgiveness."
+  },
+  "monajat-8": {
+    "benefitsEn": [
+      "Attainment of the eternal divine promises conveyed through the Messengers of Allah",
+      "Freedom from disgrace and regret on the Day of Judgment",
+      "Fulfills complete trust in the unfailing promise of Allah"
+    ],
+    "noteEn": "The highest etiquette in prayer is asking for the very rewards Allah promised through His Prophets, rather than asking purely based on one’s own earthly desires."
+  },
+  "monajat-9": {
+    "benefitsEn": [
+      "Forgiveness of sins and protection from arrogance and transgression",
+      "Firmness of foot and unwavering fortitude in facing challenges and opposition",
+      "Victory, help, and triumph over disbelief and wrongdoing"
+    ],
+    "noteEn": "This prayer combines the affirmation of Allah’s absolute sovereignty, unconditional submission, and pure praise (Hamd)."
+  },
+  "monajat-10": {
+    "benefitsEn": [
+      "Complete forgiveness of self-inflicted wrongs, errors, and shortcomings",
+      "Envelops the soul in Allah’s boundless mercy and prevents ultimate spiritual loss",
+      "Instills deep humility, sincere remorse, and inner purity"
+    ],
+    "noteEn": "The profound prayer of repentance uttered by Prophet Adam and Eve (peace be upon them). It is frequently recited within our regular daily prayers."
+  },
+  "monajat-11": {
+    "benefitsEn": [
+      "Protection from falling into the companionship, mentality, and punishment of the unjust",
+      "Safeguards one’s faith and integrity amidst surrounding corruption and falsehood",
+      "Preserves the heart from despair when witnessing oppression"
+    ],
+    "noteEn": "Righteous companionship brings spiritual elevation, whereas corrupt company brings ruin. On the Day of Resurrection, people are gathered with those they emulate."
+  },
+  "monajat-12": {
+    "benefitsEn": [
+      "Shields from asking for things that lead to harm or for which one has no beneficial knowledge",
+      "Cleanses the heart from inappropriate desires and spiritual ignorance",
+      "Secures Allah’s overarching mercy and protection from ruin"
+    ],
+    "noteEn": "The prayer of Prophet Nuh (Noah, peace be upon him). Often, having a desire withheld by Allah is the very mercy that protects us, though our limited sight cannot see it."
+  },
+  "monajat-13": {
+    "benefitsEn": [
+      "A blessed and peaceful end upon Islam and true faith (Husn al-Khatimah)",
+      "Joining the company of the righteous prophets, martyrs, and saints in Paradise",
+      "Total surrender to the Lord of the heavens and the earth"
+    ],
+    "noteEn": "The heartfelt prayer of Prophet Yusuf (Joseph, peace be upon him). Recognizing that the Giver of life is also the Causer of death dissolves spiritual doubt and distance."
+  },
+  "monajat-14": {
+    "benefitsEn": [
+      "Forgiveness for oneself, one’s parents, and all believing men and women",
+      "Great divine reward and elevation of rank on the Day the Reckoning is established",
+      "Strengthens love and spiritual connection with the entire global Ummah"
+    ],
+    "noteEn": "Reciting this with humility, awe, and submission late at night after the Tahajjud prayer yields extraordinary spiritual openings."
+  },
+  "monajat-15": {
+    "benefitsEn": [
+      "Extensive divine mercy and unconditional forgiveness from the Best of the Merciful",
+      "Protection from the consequences of human frailty and transgression",
+      "Elevates the believer among those blessed with divine compassion"
+    ],
+    "noteEn": "Because this supplication is centered on the Hereafter and the welfare of all believing servants, it carries immense power."
+  },
+  "monajat-16": {
+    "benefitsEn": [
+      "Direct divine mercy and miraculous guidance in bewildering or difficult circumstances",
+      "Rectification of one’s affairs and clarity of judgment when paths seem closed",
+      "Protection of youth and family from societal corruption"
+    ],
+    "noteEn": "The prayer of the Youth of the Cave (Ashab al-Kahf). A concise yet complete supplication acknowledging human helplessness and calling upon divine grace."
+  },
+  "monajat-17": {
+    "benefitsEn": [
+      "Expands the chest with peace, removing anxiety, fear, and constriction of heart",
+      "Makes difficult tasks easy and unties knots of hesitation in speech",
+      "Grants eloquence, clarity, and persuasiveness in conveying truth and doing good"
+    ],
+    "noteEn": "The supplication of Prophet Musa (Moses, peace be upon him). Excellent to recite before reciting the Holy Quran, taking an exam, or addressing people with a good purpose."
+  },
+  "monajat-18": {
+    "benefitsEn": [
+      "Blessing of righteous, pious offspring and noble descendants",
+      "Acceptance of supplications from the Supreme Hearer of all prayer",
+      "Preservation of lineage in faith and virtue"
+    ],
+    "noteEn": "The prayer of Prophet Zakariyya (Zechariah, peace be upon him). The condition of its blessing is seeking children solely for Allah and with the intention of dedicating them to His path."
+  },
+  "monajat-19": {
+    "benefitsEn": [
+      "Protection from all forms of harm, mockery, and whispers of the devils (Shayatin)",
+      "Shields the mind and home from demonic presence, intrusive thoughts, and negativity",
+      "Brings spiritual calmness and clarity during prayer and daily tasks"
+    ],
+    "noteEn": "While reciting this supplication, one should bring to mind their specific trials and remain earnest in rectifying any personal shortcomings."
+  },
+  "monajat-20": {
+    "benefitsEn": [
+      "Divine mercy and forgiveness that supersede all human sins",
+      "Comfort in grief and uplifting of sorrowful hearts",
+      "Attaining the favor of Allah who is the Most Merciful of all who show mercy"
+    ],
+    "noteEn": "Reciting this alongside Kalimah and Istighfar, followed by Prayer 21, yields the most profound blessings."
+  },
+  "monajat-21": {
+    "benefitsEn": [
+      "Affirmation of true faith that serves as an intercessor for complete divine pardon",
+      "Shields from the torment and fires of the Hellfire",
+      "Strengthens resolute adherence to Islamic monotheism"
+    ],
+    "noteEn": "The closing verse of Surah Al-Mu’minun. Highly recommended to be paired with Prayer 20."
+  },
+  "monajat-22": {
+    "benefitsEn": [
+      "Ward off the agony of Hellfire whose torment is perpetual and devastating",
+      "Protects one’s home and dwelling place from evil and spiritual destruction",
+      "Instills reverence and caution in one’s daily living"
+    ],
+    "noteEn": "One of the defining prayers of the beloved servants of the Most Merciful (Ibadur-Rahman) described in the Quran."
+  },
+  "monajat-23": {
+    "benefitsEn": [
+      "Brings deep harmony, mutual joy, and coolness of the eyes in marriage and family",
+      "Cultivates pious, noble children who become beacons of righteousness",
+      "Grants leadership in piety and righteousness among the God-conscious"
+    ],
+    "noteEn": "The premier Quranic supplication for family tranquility, marital affection, and the cultivation of an exemplary future generation."
+  },
+  "monajat-24": {
+    "benefitsEn": [
+      "Bestowal of sound wisdom, deep discernment, and true righteousness",
+      "Joining the company of the righteous in this life and the next",
+      "An enduring honorable mention and upright legacy among subsequent generations"
+    ],
+    "noteEn": "The prayer of Prophet Ibrahim (Abraham, peace be upon him). The fusion of authentic wisdom and righteous action anchors the truth firmly within the heart."
+  },
+  "monajat-25": {
+    "benefitsEn": [
+      "Inspires heartfelt gratitude for the countless blessings bestowed upon oneself and parents",
+      "Guidance to perform righteous deeds that earn the direct pleasure of Allah",
+      "Reform and righteousness bestowed upon one’s descendants and family"
+    ],
+    "noteEn": "The Quran particularly advises frequent recitation of this prayer upon reaching the age of forty. It is best followed by abundant praises (Hamd)."
+  },
+  "monajat-26": {
+    "benefitsEn": [
+      "Cleanses the heart from malice, rancor, jealousy, and ill-will toward fellow believers",
+      "Forgiveness for oneself and for all brothers and sisters who preceded in faith",
+      "Nurtures a pure, expansive heart imbued with divine tenderness and compassion"
+    ],
+    "noteEn": "Supplicating with a generous, cleansed heart for fellow believers is one of the quickest ways to have one’s own personal prayers answered."
+  },
+  "monajat-27": {
+    "benefitsEn": [
+      "Completion and perfection of divine light on the Day of Judgment (the bridge of Sirat)",
+      "Total pardon and covering of sins on that terrifying Day",
+      "Absolute trust in Allah’s boundless omnipotence over all things"
+    ],
+    "noteEn": "Especially when facing adversity or injustice against the righteous, reciting this together with Prayers 2 and 3 provides tremendous spiritual sanctuary."
+  },
+  "hamd-1": {
+    "benefitsEn": [
+      "The foundational praise of the Universe; reciting it attracts divine mercy and blessings in all matters",
+      "Attunes the soul to the supreme Lordship and benevolence of Allah over all realms of existence"
+    ]
+  },
+  "hamd-2": {
+    "benefitsEn": [
+      "Acknowledges Allah as the sole Creator of heavens, earth, darkness, and light",
+      "Purifies the heart from all subtle forms of polytheism and restores clarity of vision"
+    ]
+  },
+  "hamd-3": {
+    "benefitsEn": [
+      "Brings total severance of the roots of oppression and injustice",
+      "Strengthens the certainty that ultimate triumph belongs to justice and truth"
+    ]
+  },
+  "hamd-4": {
+    "benefitsEn": [
+      "Bestows deep peace, removing all sorrow, grief, and inner heavy burdens",
+      "Reminds the heart of the eternal bliss and divine fulfillment awaiting in Paradise"
+    ]
+  },
+  "hamd-5": {
+    "benefitsEn": [
+      "Affirms Allah as self-sufficient, without partners, offspring, or weaknesses requiring a helper",
+      "Reciting this regularly magnifies the greatness of Allah in the believer’s daily life"
+    ],
+    "noteEn": "Reciting this verse 50, 100, or as many times as possible with deep meditation brings immense spiritual strength."
+  },
+  "hamd-6": {
+    "benefitsEn": [
+      "Expresses immense gratitude for the divine revelation and straight guidance of the Quran",
+      "Protects from doctrinal deviations, confusion, and moral corruptions"
+    ]
+  },
+  "hamd-7": {
+    "benefitsEn": [
+      "Salvation from the people of oppression, wrongdoing, and corruption",
+      "Strengthens trust in Allah during times of persecution and distress"
+    ]
+  },
+  "hamd-8": {
+    "benefitsEn": [
+      "Recognition of divine favors, intellectual gifts, and wisdom over many creations",
+      "Humility in moments of success and high worldly or spiritual achievement"
+    ]
+  },
+  "hamd-9": {
+    "benefitsEn": [
+      "Protection from the fires of Hell and relief from all anxieties regarding the afterlife",
+      "Opens the gates of divine reward and spiritual tranquility"
+    ]
+  },
+  "hamd-10": {
+    "benefitsEn": [
+      "Gratitude for old age, preservation of health, and the blessing of children",
+      "Fosters deep love for Allah who hears and answers every sincere prayer"
+    ]
+  },
+  "hamd-11": {
+    "benefitsEn": [
+      "Fulfillment of true divine promises and inheritance of the high stations of Jannah",
+      "Sparks enduring hope and motivation for righteous deeds"
+    ]
+  },
+  "hamd-12": {
+    "benefitsEn": [
+      "Celebrates the majesty of Allah as the unique Originator of the heavens and the earth",
+      "Inspires awe regarding the vast angelic creation and divine power"
+    ]
+  },
+  "hamd-13": {
+    "benefitsEn": [
+      "Praise of the King to whom belongs everything in the heavens and on earth",
+      "Reiterates that the highest wisdom and knowledge belong to Allah alone"
+    ]
+  },
+  "hamd-14": {
+    "benefitsEn": [
+      "Rejoicing in the removal of all lingering sadness and anxiety",
+      "Confidence in Allah as the Most Forgiving, Appreciative of every small good deed"
+    ],
+    "noteEn": "Combining this with the succeeding verse (Surah Ghafir, 65) carries exceptional spiritual benefit."
+  },
+  "hamd-15": {
+    "benefitsEn": [
+      "Acknowledgment that only Allah possesses the keys to the unseen and absolute judgment",
+      "Brings deep contentment when faced with the outcomes of divine decree"
+    ]
+  },
+  "hamd-16": {
+    "benefitsEn": [
+      "Affirms that all pride and supremacy in the cosmos belong exclusively to Allah",
+      "Crushes arrogance and vanity in the human heart"
+    ]
+  },
+  "hamd-17": {
+    "benefitsEn": [
+      "Praise of the Living, Eternal Lord who never dies or tires",
+      "Deepens pure devotion and sincerity in worship"
+    ]
+  },
+  "hamd-18": {
+    "benefitsEn": [
+      "Recognizes Allah’s supreme authority over the throne and all creation",
+      "Brings comfort knowing that the cosmos is governed by supreme justice"
+    ]
+  },
+  "hamd-19": {
+    "benefitsEn": [
+      "Exalts Allah above all human limitations and fabricated associations",
+      "Safeguards faith against intellectual distortions and doubts"
+    ]
+  },
+  "hamd-20": {
+    "benefitsEn": [
+      "Praise for the succession of day and night, rain, and the sustenance of life",
+      "Nurtures profound gratitude for everyday physical and natural blessings"
+    ]
+  },
+  "hamd-21": {
+    "benefitsEn": [
+      "Peace and greetings of peace upon the honorable Messengers of God",
+      "Connects the reciter to the unbroken chain of divine prophecy"
+    ]
+  },
+  "hamd-22": {
+    "benefitsEn": [
+      "A universal declaration of praise that encompasses all realms and beings",
+      "The ultimate praise uttered by the dwellers of Paradise"
+    ]
+  },
+  "hamd-23": {
+    "benefitsEn": [
+      "The concluding call of the believers in Paradise: All praise belongs to the Lord of the worlds",
+      "Inspires a life lived with the sole aim of pleasing the Creator"
+    ]
+  },
+  "amal-1": {
+    "benefitsEn": [
+      "Strengthens the bond of kinship, compassion, and upright social morality",
+      "Instills high moral principles and guards against shameful conduct"
+    ]
+  },
+  "amal-2": {
+    "benefitsEn": [
+      "Deepens remembrance of Allah morning and evening",
+      "Builds a spiritual fortress around the mind against worldly temptations"
+    ]
+  },
+  "amal-3": {
+    "benefitsEn": [
+      "Reconciliation of disputes among believers and maintaining brotherhood",
+      "Preserves unity and mutual goodwill among the community"
+    ]
+  },
+  "amal-4": {
+    "benefitsEn": [
+      "Fosters truthfulness and integrity in trade, agreements, and speech",
+      "Attracts divine blessings (Barakah) in livelihood and affairs"
+    ]
+  },
+  "amal-5": {
+    "benefitsEn": [
+      "Cultivates selfless spending in times of prosperity and adversity",
+      "Restrains anger and fosters ready forgiveness towards others"
+    ]
+  },
+  "amal-6": {
+    "benefitsEn": [
+      "Patience in adversity and reliance upon the wisdom of Allah",
+      "Brings tranquility and fortitude during unexpected hardships"
+    ],
+    "noteEn": "There is a special recommendation to meditate upon this verse in deep quietude."
+  },
+  "amal-7": {
+    "benefitsEn": [
+      "Fulfills the supreme duty of kindness and gentle care for parents",
+      "Secures divine pleasure through honoring one’s mother and father"
+    ]
+  },
+  "amal-8": {
+    "benefitsEn": [
+      "Observing justice without compromise, even against one’s own self or relatives",
+      "Protects from prejudice, bias, and unfair judgment"
+    ]
+  },
+  "amal-9": {
+    "benefitsEn": [
+      "The renowned Verse of Light (Ayat an-Nur) illuminating the heart with divine guidance",
+      "Removes spiritual darkness, anxiety, and perplexity"
+    ],
+    "noteEn": "In this verse, Allah describes His divine light through the most sublime parable."
+  },
+  "amal-10": {
+    "benefitsEn": [
+      "Humility in walking upon the earth and answering hostility with peace",
+      "Exemplifies the sublime demeanor of the true servants of God"
+    ]
+  },
+  "amal-11": {
+    "benefitsEn": [
+      "Spending the night in prayer and prostration (Qiyam al-Layl)",
+      "Draws down divine mercy during the quiet hours before dawn"
+    ]
+  },
+  "amal-12": {
+    "benefitsEn": [
+      "Seeking protection through the sacred closing verses of Surah Al-Baqarah",
+      "Provides sufficient protection for the entire night from all evils"
+    ],
+    "noteEn": "It is highly recommended to recite this mindfully before retiring to sleep."
+  },
+  "amal-13": {
+    "benefitsEn": [
+      "Surrendering all affairs unto the Almighty who knows every secret",
+      "Dispels terror, sorrow, and feeling of isolation"
+    ]
+  },
+  "iman-1": {
+    "benefitsEn": [
+      "A cardinal principle for strengthening faith and expiating sins: good deeds drive away evil deeds."
+    ]
+  },
+  "iman-2": {
+    "benefitsEn": [
+      "Attaining worldly and eternal success through bowing, prostration, worship, and active benevolence."
+    ]
+  },
+  "iman-3": {
+    "benefitsEn": [
+      "Fortifying faith through the undeniable truth of divine unity and the Day of Resurrection."
+    ]
+  },
+  "iman-4": {
+    "benefitsEn": [
+      "Instruction in shedding arrogance and falling in humble prostration and glorification before Allah."
+    ]
+  },
+  "iman-5": {
+    "benefitsEn": [
+      "Awakens deep contemplation of Quranic warnings and the profound reality of Monotheism."
+    ]
+  },
+  "iman-6": {
+    "benefitsEn": [
+      "Unshakable conviction in the ultimate triumph of Truth and the inevitable destruction of falsehood."
+    ]
+  },
+  "iman-7": {
+    "benefitsEn": [
+      "Growth in guidance through treading the righteous path and securing the enduring rewards of good deeds."
+    ]
+  },
+  "iman-8": {
+    "benefitsEn": [
+      "Direct divine direction, companionship, and steadfastness in exchange for striving in Allah’s way."
+    ]
+  },
+  "iman-9": {
+    "benefitsEn": [
+      "A deeply spiritually potent verse; reciting it frequently grants fortitude in conquering base desires (Nafs)."
+    ]
+  },
+  "iman-10": {
+    "benefitsEn": [
+      "Reciting this verse quells doubts and deceptive questionings stirred by the lower self."
+    ]
+  },
+  "iman-11": {
+    "benefitsEn": [
+      "Achieving completion of faith by discarding heedlessness and falling in reverent prostration before Allah."
+    ]
+  }
+};
+
 const BOOK_ENTRIES = [
   // ==========================================================================
   // CHAPTER 1: 27 MONAJAT (প্রার্থনা ১ - ২৭)
@@ -2386,20 +2882,28 @@ export default function App() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                   {[
                     {
-                      step: '১. তওবা ও ইস্তেগফার',
-                      desc: 'প্রার্থনার শুরুতে নিজের গুনাহ স্বীকার করে খাঁটি মনে ক্ষমা প্রার্থনা করা।'
+                      stepBn: '১. তওবা ও ইস্তেগফার',
+                      stepEn: '1. Repentance & Seeking Forgiveness (Istighfar)',
+                      descBn: 'প্রার্থনার শুরুতে নিজের গুনাহ স্বীকার করে খাঁটি মনে ক্ষমা প্রার্থনা করা।',
+                      descEn: 'Commence by acknowledging your sins and seeking sincere repentance from Allah.'
                     },
                     {
-                      step: '২. হামদ ও প্রশংসা',
-                      desc: 'পর্ব-২ এর আয়াতগুলোর মাধ্যমে আল্লাহর মহিমা ও প্রশংসা পাঠ করা।'
+                      stepBn: '২. হামদ ও প্রশংসা',
+                      stepEn: '2. Praise & Glorification (Hamd)',
+                      descBn: 'পর্ব-২ এর আয়াতগুলোর মাধ্যমে আল্লাহর মহিমা ও প্রশংসা পাঠ করা।',
+                      descEn: 'Recite verses from Chapter 2 to glorify Allah with the praises He loves.'
                     },
                     {
-                      step: '৩. দরূদ শরীফ',
-                      desc: 'প্রিয় নবী হযরত মুহাম্মদ (সা.)-এর প্রতি দরূদ ও সালাম পেশ করা।'
+                      stepBn: '৩. দরূদ শরীফ',
+                      stepEn: '3. Blessings upon the Prophet (Durood)',
+                      descBn: 'প্রিয় নবী হযরত মুহাম্মদ (সা.)-এর প্রতি দরূদ ও সালাম পেশ করা।',
+                      descEn: 'Send sincere blessings and peace upon our beloved Prophet Muhammad (ﷺ).'
                     },
                     {
-                      step: '৪. কোরআনিক মোনাজাত',
-                      desc: 'অত্যন্ত বিনয় ও আত্মসমর্পণ নিয়ে ২৭টি মোনাজাত নিবেদন করা।'
+                      stepBn: '৪. কোরআনিক মোনাজাত',
+                      stepEn: '4. Quranic Supplication (Monajat)',
+                      descBn: 'অত্যন্ত বিনয় ও আত্মসমর্পণ নিয়ে ২৭টি মোনাজাত নিবেদন করা।',
+                      descEn: 'Humbly present the 27 divine supplications with deep humility and submission.'
                     }
                   ].map((item, i) => (
                     <div
@@ -2411,10 +2915,10 @@ export default function App() {
                       }`}
                     >
                       <div className="font-bn-serif font-bold text-sm text-[#C59B27] mb-1">
-                        {item.step}
+                        {lang === 'bn' ? item.stepBn : item.stepEn}
                       </div>
                       <p className="font-bn-sans text-xs leading-relaxed opacity-85">
-                        {item.desc}
+                        {lang === 'bn' ? item.descBn : item.descEn}
                       </p>
                     </div>
                   ))}
@@ -2433,7 +2937,9 @@ export default function App() {
                   উচ্চারণ নির্দেশিকা (Transliteration Guide)
                 </h3>
                 <p className="font-bn-sans text-sm opacity-80 mb-4">
-                  বাংলায় আরবি উচ্চারণের ভুল এড়ানোর জন্য বইটিতে ব্যবহৃত বিশেষ চিহ্নসমূহ:
+                  {lang === 'bn'
+                    ? 'বাংলায় আরবি উচ্চারণের ভুল এড়ানোর জন্য বইটিতে ব্যবহৃত বিশেষ চিহ্নসমূহ:'
+                    : 'Special phonetic symbols used in the original book to ensure accurate transliteration:'}
                 </p>
                 <div className="divide-y divide-[#C59B27]/20">
                   {PRONUNCIATION_RULES.map((rule, idx) => (
@@ -2758,10 +3264,17 @@ export default function App() {
                                   <div>
                                     <div className="font-bold text-xs uppercase tracking-wider text-[#0F5B63] dark:text-[#E5C158] mb-1.5 flex items-center gap-1.5">
                                       <Sparkles size={13} className="text-[#C59B27]" />
-                                      <span>ফজিলত ও উপকারিতা (Spiritual Benefits):</span>
+                                      <span>
+                                        {lang === 'bn'
+                                          ? 'ফজিলত ও উপকারিতা (Spiritual Benefits):'
+                                          : 'Spiritual Benefits & Context:'}
+                                      </span>
                                     </div>
                                     <ul className="space-y-1 pl-4 list-disc marker:text-[#C59B27] opacity-90">
-                                      {entry.benefitsBn.map((b, i) => (
+                                      {((lang === 'en' && TRANSLATIONS_EN[entry.id]?.benefitsEn)
+                                        ? TRANSLATIONS_EN[entry.id].benefitsEn
+                                        : entry.benefitsBn
+                                      ).map((b, i) => (
                                         <li key={i}>{b}</li>
                                       ))}
                                     </ul>
@@ -2774,7 +3287,11 @@ export default function App() {
                                       size={14}
                                       className="text-[#C59B27] shrink-0 mt-0.5"
                                     />
-                                    <span>{entry.noteBn}</span>
+                                    <span>
+                                      {(lang === 'en' && TRANSLATIONS_EN[entry.id]?.noteEn)
+                                        ? TRANSLATIONS_EN[entry.id].noteEn
+                                        : entry.noteBn}
+                                    </span>
                                   </div>
                                 )}
                               </div>
